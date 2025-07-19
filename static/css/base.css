@@ -6,7 +6,7 @@
     --main-font: 'Roboto, serif';
 
     /* Colors */
-    --background: #a3b68a;
+    --olive: #D4DE95;
     --beige: #f5f5d5;
     --black: #000000;
     --white: #ffffff;
@@ -35,8 +35,10 @@ main {
     background-color: var(--beige);
 }
 /* Header */
+nav {
+    background-color: var(--olive);
+}
 .navbar {
-    background-color: var(--background);
     box-shadow: var(--small-box-shadow);
 }
 a.nav-link {
@@ -44,10 +46,20 @@ a.nav-link {
 }
 img.logo {
     width: 220px;
-    height: 120px;
+    height: 90px;
 }
 
 /* Footer */
  footer {
     flex-shrink: 0;
+    background-color: var(--olive);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+ }
+ .social-icon {
+    height: 2rem;
+    margin: 2rem;
  }

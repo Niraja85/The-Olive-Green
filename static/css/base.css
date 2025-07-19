@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Fonts */
+    --title: 'Noticia Text, serif';
+    --main-font: 'Roboto, serif';
+
+    /* Colors */
+    --background: #a3b68a;
+    --beige: #f5f5d5;
+    --black: #000000;
+    --white: #ffffff;
+    --dark-brown: #654321;
+
+    /* Utils */
+    --small-box-shadow: 1px -1px 8px 0 #000000;
+    --border: 1px solid #00000030;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--beige);
+}
+/* Header */
+.navbar {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+}
+a.nav-link {
+    color: var(--black);
+}
+img.logo {
+    width: 220px;
+    height: 120px;
+}
+
+/* Footer */
+ footer {
+    flex-shrink: 0;
+ }

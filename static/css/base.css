@@ -49,6 +49,20 @@ img.logo {
     height: 90px;
 }
 
+.active {
+    font-weight: 500;
+    color: var(--olive);
+
+}
+
+/* Form */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+}
+
 /* Footer */
  footer {
     flex-shrink: 0;

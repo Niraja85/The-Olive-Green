@@ -35,9 +35,6 @@ main {
     background-color: var(--beige);
 }
 /* Header */
-header {
-    background-color: var(--olive);
-}
 .navbar {
     box-shadow: var(--small-box-shadow);
 }
@@ -49,7 +46,7 @@ img.logo {
     height: 90px;
 }
 
-a.navlink.active {
+.active {
     font-weight: 500;
     border-bottom: var(--olive);
 
@@ -77,3 +74,42 @@ a.navlink.active {
     height: 2rem;
     margin: 2rem;
  }
+
+ /* Home Page */
+ .hero-image {
+    background-image: url('/static/images/hero-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+ }
+ .card-title {
+    color: green;
+ }
+ .card.ope-times ul {
+    list-style-type: none;
+}
+
+.card.ope-times ul li {
+    padding: 0.25rem 0;
+}
+
+.card .getin-touch {
+    padding: 0.25rem 0;
+}
+
+.btn {
+  background-color: green;
+  color: var(--white);
+
+}
+
+.bg-card {
+    background-color: var(--olive);
+    border-style: none;
+}
+
+

@@ -35,7 +35,7 @@ main {
     background-color: var(--beige);
 }
 /* Header */
-nav {
+header {
     background-color: var(--olive);
 }
 .navbar {
@@ -49,9 +49,9 @@ img.logo {
     height: 90px;
 }
 
-.active {
+a.navlink.active {
     font-weight: 500;
-    color: var(--olive);
+    border-bottom: var(--olive);
 
 }
 

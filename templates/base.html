@@ -14,6 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js" integrity="sha512-zKeerWHHuP3ar7kX2WKBSENzb+GJytFSBL6HrR2nPSR1kOX1qjm+oHooQtbDpDBSITgyl7QXZApvDfDWvKjkUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {% endblock %}
     <title>The Olive Green {% block title %}{% endblock %}</title>
+
+    <!-- Favicon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/favicon_io/apple-touch-icon.png' %}">
+     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon_io/favicon-32x32.png' %}">
+     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon_io/favicon-16x16.png' %}">
 </head>
 <body>
     {% include 'includes/header.html' %}

@@ -19,7 +19,6 @@ class Menu (models.Model):
 MENU_CATEGORIES = (
     ("starter", "Starter"),
     ("main", "Main"),
-    ("salads", "Salads"),
     ("cocktails", "Cocktails"),
     ("wine", "Wine"),
     ("desserts", "Desserts"),

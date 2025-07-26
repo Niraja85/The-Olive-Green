@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!--Including base css and Bootstrap manually as base.html adds Bootstrap inside teh vlock only-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Base CSS-->
+<link rel="stylesheet" href="{% static '/css/base.css' %}">
+
+<!-- Menu specific CSS-->
+ <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}"
+ {% endblock %}
+
+ {% block content %}
+
+ <section id="main-menu" class="wrap-menu">
+    <h1 class="text-center">The Menu</h1>
+    <div class="menu-setup">
+        {% for category_label, items in grouped_menu.items %}
+        <div class="categories">
+            <h2 class ="category-title">{{ category_label }}</h2>
+
+            {% for item in items %}
+            <article class=" menu-card">
+                <header class="menu-card-head">
+                    <h3 class="item-title">{{ item.title }}</h3>
+                    <span class="item-price">{{ item.price|floatformat:2 }}</span>
+                </header>
+                <p class= "item-desc">{{ item.description }}</p>
+            </article>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+ </section>
+
+ {% endblock %}
+
+

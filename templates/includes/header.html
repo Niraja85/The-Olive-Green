@@ -18,9 +18,25 @@
           <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         <!-- Menu -->
+         <!--Menu is visible to everyone -->
         <li class="nav-item">
           <a class="nav-link {% if url_name == 'menu' %}active{% endif %}" href="{%url 'menu' %}">Menu</a>
         </li>
+        <!-- Menu management only by Admin -->
+         {% if user.is_staff %}
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {% if url_name in 'create_menu, create_menu_items' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown">Admin Menu</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'create_menu' %}">Create Menu</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'create_menu_items' %}">Create Menu Item</a>
+            </li>
+         </ul>
+        </li>
+        {% endif %}
+
         <!-- Bookings -->
         <li class="nav-item">
           <a class="nav-link" href="#">Booking</a>

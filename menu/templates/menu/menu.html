@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static '/css/base.css' %}">
 
 <!-- Menu specific CSS-->
- <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}"
+ <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
  {% endblock %}
 
  {% block content %}
@@ -19,15 +19,15 @@
     <div class="menu-setup">
         {% for category_label, items in grouped_menu.items %}
         <div class="categories">
-            <h2 class ="category-title">{{ category_label }}</h2>
+            <h2 class ="category-title">{{ category_label|safe }}</h2>
 
             {% for item in items %}
             <article class=" menu-card">
                 <header class="menu-card-head">
-                    <h3 class="item-title">{{ item.title }}</h3>
-                    <span class="item-price">{{ item.price|floatformat:2 }}</span>
+                    <h3 class="item-title">{{ item.title|safe }}</h3>
+                    <span class="item-price">{{ item.price|floatformat:2|safe }}</span>
                 </header>
-                <p class= "item-desc">{{ item.description }}</p>
+                <p class= "item-desc">{{ item.description|safe}}</p>
             </article>
             {% endfor %}
         </div>

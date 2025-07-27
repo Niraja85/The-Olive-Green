@@ -9,3 +9,23 @@ class MenuForm(forms.ModelForm):
             'name',
             'active',
         ]
+
+class MenuItemForm(forms.ModelForm):
+    """
+    Form to create menu items with checkboxes
+    """
+    class Meta:
+        model = MenuItem
+        fields = [
+            'menu',
+            'title',
+            'category',
+            'description',
+            'price',
+            ]
+        labels = {
+            "title": "Title",
+            "category": "Category",
+            "description": "Description",
+            "price": "Price",
+        }

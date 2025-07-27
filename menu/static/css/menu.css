@@ -1,5 +1,45 @@
-#main-menu .wrap menu {
+#main-menu .wrap-menu {
     padding: 2rem, 1 rem;
     max-width: 1100px;
     margin: 0 auto;
+}
+.wrap-menu {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+#main-menu .menu-setup {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+#main-menu .category-title {
+    margin: 0 0 1 rem;
+    font-size: 1.75rem;
+}
+#main-menu .menu-card {
+    background: #ffff;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+#main-menu .menu-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: .35rem;
+}
+#main-menu .item-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+#main-menu .item-price {
+  font-weight: 700;
+}
+
+#main-menu .item-desc {
+  margin: 0 0 .5rem;
+  color: #555;
 }

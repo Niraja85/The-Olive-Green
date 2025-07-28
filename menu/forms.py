@@ -5,10 +5,7 @@ class MenuForm(forms.ModelForm):
     """ Form to create Menu """
     class Meta:
         model = Menu
-        fields = [
-            'name',
-            'active',
-        ]
+        fields = ['name', 'active']
 
 class MenuItemForm(forms.ModelForm):
     """
@@ -16,13 +13,7 @@ class MenuItemForm(forms.ModelForm):
     """
     class Meta:
         model = MenuItem
-        fields = [
-            'menu',
-            'title',
-            'category',
-            'description',
-            'price',
-            ]
+        fields = ['menu', 'title', 'category', 'description', 'price']
         labels = {
             "title": "Title",
             "category": "Category",

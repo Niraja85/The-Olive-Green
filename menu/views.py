@@ -3,9 +3,9 @@ from .models import Menu, MenuItem, MENU_CATEGORIES
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
+from django.urls import reverse_lazy
 from .forms import MenuForm, MenuItemForm
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def menu_view(request):
@@ -18,11 +18,11 @@ def menu_view(request):
     return render(request, 'menu/menu.html', {'grouped_menu': grouped_menu})
 
 @method_decorator(staff_member_required, name='dispatch')
-class CreateMenuView(LoginRequiredMixin, CreateView):
+class CreateMenuView(CreateView):
     """ Create Menu View to create a menu if user is staff """
     model = Menu
     template_name = 'menu/create_menu.html'
-    success_url = '/menu/'
+    success_url = reverse_lazy('menu')
     form_class = MenuForm
 
     def form_valid(self, form):
@@ -36,8 +36,9 @@ class CreateMenuItemsView(CreateView):
     model = MenuItem
     form_class = MenuItemForm
     template_name = 'menu/create_menu_items.html'
-    success_url = '/menu/'
+    success_url = reverse_lazy('menu')
 
     def form_valid(self,form):
+        response = super().form_valid(form)
         messages.success(self.request, 'Item added to the menu successfully')
-        return super().form_valid(form)
+        return response

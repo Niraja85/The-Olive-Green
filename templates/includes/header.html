@@ -5,7 +5,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" href="#"><img src="{% static 'images/Olive-Green-logo.webp' %}" alt="Olive Green Restaurant Logo" class="logo"></a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/Olive-Green-logo.webp' %}" alt="Olive Green Restaurant Logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,14 +25,10 @@
         <!-- Menu management only by Admin -->
          {% if user.is_staff %}
          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle {% if url_name in 'create_menu, create_menu_items' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown">Admin Menu</a>
+          <a class="nav-link dropdown-toggle {% if url_name in 'create_menu, create_menu_items' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="False">Admin Menu</a>
           <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="{% url 'create_menu' %}">Create Menu</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="{% url 'create_menu_items' %}">Create Menu Item</a>
-            </li>
+            <li><a class="dropdown-item" href="{% url 'create_menu' %}">Create Menu</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_menu_items' %}">Create Menu Item</a></li>
          </ul>
         </li>
         {% endif %}

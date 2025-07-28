@@ -2,12 +2,12 @@
 
 {% block title %}Create Menu{% endblock %}
 
-{% block_content}
+{% block content %}
 <div class="container" mt-5>
 
     <form method="post" enctype="multipart/form-data" class="p-2 form">
         <h2 class="text-center">Create a new Menu</h2>
-        {% csrf token %}
+        {% csrf_token %}
         {{ form.media }}
         {{ form|crispy }}
         <div class="text-center">

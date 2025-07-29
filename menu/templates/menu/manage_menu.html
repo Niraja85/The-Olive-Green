@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!--Add Bootstrap Css manually -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+<!-- Menu specific CSS-->
+<link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-5">Manage Menu</h2>
+    {% regroup menu_items by category as category_list %}
+
+    {% for group in category_list %}
+    <div class="mb-4">
+        <h3 class="text-primary border-bottom pb-2">{{group.grouper|title}}</h3>
+
+        {% for item in group.list %}
+        <div claas="menu-item-card mb-3 border p-3 rounded">
+            <h4>{{item.title|safe}}</h4>
+            <p>{{item.description|safe}}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>

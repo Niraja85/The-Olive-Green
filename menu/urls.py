@@ -5,4 +5,5 @@ urlpatterns = [
     path('menu/', views.menu_view, name='menu'),
     path('create_menu/', views.CreateMenuView.as_view(), name='create_menu'),
     path('create_menu_items/', views.CreateMenuItemsView.as_view(), name='create_menu_items'),
+    path('manage_menu/', views.ManageMenuView.as_view(), name='manage_menu'),
 ]

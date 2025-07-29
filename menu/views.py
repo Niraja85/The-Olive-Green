@@ -1,4 +1,4 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from .models import Menu, MenuItem, MENU_CATEGORIES
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
@@ -16,6 +16,7 @@ def menu_view(request):
         for key, label in MENU_CATEGORIES
     }
     return render(request, 'menu/menu.html', {'grouped_menu': grouped_menu})
+
 
 @method_decorator(staff_member_required, name='dispatch')
 class CreateMenuView(CreateView):
@@ -38,7 +39,18 @@ class CreateMenuItemsView(CreateView):
     template_name = 'menu/create_menu_items.html'
     success_url = reverse_lazy('menu')
 
-    def form_valid(self,form):
+    def form_valid(self, form):
         response = super().form_valid(form)
         messages.success(self.request, 'Item added to the menu successfully')
         return response
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class ManageMenuView(ListView):
+    """ Manage menu view is to manage menu items if user is staff"""
+    model = MenuItem
+    template_name = 'menu/manage_menu.html'
+    context_object_name = 'menu_items'
+
+    def get_queryset(self):
+        return MenuItem.objects.all()

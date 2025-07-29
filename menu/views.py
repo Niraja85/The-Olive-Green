@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from .models import Menu, MenuItem, MENU_CATEGORIES
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
@@ -28,7 +28,7 @@ class CreateMenuView(CreateView):
 
     def form_valid(self, form):
         messages.success(self.request, 'Menu created successfully')
-        return super().form_valid(form)
+        return super(CreateMenuView, self).form_valid(form)
 
 
 @method_decorator(staff_member_required, name='dispatch')
@@ -40,7 +40,7 @@ class CreateMenuItemsView(CreateView):
     success_url = reverse_lazy('menu')
 
     def form_valid(self, form):
-        response = super().form_valid(form)
+        response = super(CreateMenuItemsView, self).form_valid(form)
         messages.success(self.request, 'Item added to the menu successfully')
         return response
 
@@ -54,3 +54,37 @@ class ManageMenuView(ListView):
 
     def get_queryset(self):
         return MenuItem.objects.all()
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class DeleteMenuItemView(DeleteView):
+    model = MenuItem
+    template_name = 'menu/confirm_menu_delete.html'
+    success_url = reverse_lazy('manage_menu')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Menu item deleted successfully')
+        return super(DeleteMenuItemView, self).form_valid(form)
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class EditMenuItemView(UpdateView):
+    model = MenuItem
+    form_class = MenuItemForm
+    template_name = 'menu/edit_menu.html'
+    success_url = reverse_lazy('manage_menu')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Menu item updated successfully')
+        return super(EditMenuItemView, self).form_valid(form)
+
+
+
+
+
+
+
+
+
+
+

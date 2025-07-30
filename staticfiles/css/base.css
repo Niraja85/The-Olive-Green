@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Fonts */
+    --title: 'Noticia Text, serif';
+    --main-font: 'Roboto, serif';
+
+    /* Colors */
+    --olive: #D4DE95;
+    --beige: #f5f5d5;
+    --black: #000000;
+    --white: #ffffff;
+    --dark-brown: #654321;
+
+    /* Utils */
+    --small-box-shadow: 1px -1px 8px 0 #000000;
+    --border: 1px solid #00000030;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--beige);
+}
+/* Header */
+.navbar {
+    box-shadow: var(--small-box-shadow);
+}
+a.nav-link {
+    color: var(--black);
+}
+img.logo {
+    width: 220px;
+    height: 90px;
+}
+
+.active {
+    font-weight: 500;
+    border-bottom: var(--olive);
+
+}
+
+/* Form */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+}
+
+/* Footer */
+ footer {
+    flex-shrink: 0;
+    background-color: var(--olive);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+ }
+ .social-icon {
+    height: 2rem;
+    margin: 2rem;
+ }
+
+ /* Home Page */
+ .hero-image {
+    background-image: url('/static/images/hero-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+ }
+ .card-title {
+    color: green;
+ }
+ .card.ope-times ul {
+    list-style-type: none;
+}
+
+.card.ope-times ul li {
+    padding: 0.25rem 0;
+}
+
+.card .getin-touch {
+    padding: 0.25rem 0;
+}
+
+.btn {
+  background-color: green;
+  color: var(--white);
+
+}
+
+.bg-card {
+    background-color: var(--olive);
+    border-style: none;
+}
+
+

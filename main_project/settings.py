@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'menu',
+    'booking',
 
     # Others
     'crispy_forms',
@@ -200,7 +201,6 @@ SUMMERNOTE_CONFIG = {
         ],
     },
 }
-
 
 
 # Default primary key field type

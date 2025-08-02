@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Table(models.Model):
     """Model to create tables"""
     number = models.PositiveBigIntegerField(unique=True)
@@ -21,8 +22,10 @@ class Booking(models.Model):
         (4, "7:00 pm -8:45 pm"),
         (5, "9:00 pm - 10:45 pm")
     )
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking_customer")
-    table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="table_booking")
+    customer = models.ForeignKey(User, on_delete=models.CASCADE,
+                                 related_name="booking_customer")
+    table = models.ForeignKey(Table, on_delete=models.CASCADE,
+                              related_name="table_booking")
     name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
@@ -39,6 +42,5 @@ class Booking(models.Model):
         ordering = ("date", "time")
 
         def __str__(self):
-            return f"{self.name} | {self.date} {self.time} | Table {self.table.number}"
-
+            return f"{self.name} | {self.date} {self.time} |Table {self.table.number}"
 

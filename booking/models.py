@@ -22,10 +22,9 @@ class Booking(models.Model):
         (4, "7:00 pm -8:45 pm"),
         (5, "9:00 pm - 10:45 pm")
     )
-    customer = models.ForeignKey(User, on_delete=models.CASCADE,
-                                 related_name="booking_customer")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE,
-                              related_name="table_booking")
+                              related_name="booking")
     name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=15)

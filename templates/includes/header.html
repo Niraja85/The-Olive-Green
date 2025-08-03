@@ -11,12 +11,14 @@
     </button>
 
     <!-- Navigation Items -->
+
     <!-- Home -->
      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2">
         <li class="nav-item">
           <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
+
         <!-- Menu -->
          <!--Menu is visible to everyone -->
         <li class="nav-item">
@@ -34,10 +36,49 @@
         </li>
         {% endif %}
 
-        <!-- Bookings -->
+        <!-- Bookings Dropdown -->
+        {% if user.is_staff %}
+        <!--Admin view -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Booking</a>
+          <a class="nav-link dropdown-toggle {% if url_name in 'booking manage_booking' %}active{% endif %}"
+          href="#" role="button" data-bs-toggle="dropdown">Bookings</a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'booking' %}">Create Booking</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'manage_booking' %}">Upcoming Bookings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'admin_booking' %}">All Bookings (Admin)</a>
+            </li>
+          </ul>
         </li>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <!--Customer view-->
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle {% if url_name in 'booking manage_booking' %}active{% endif %}"
+          href="#" role="button" data-bs-toggle="dropdown">Bookings</a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'booking' %}">Create Bookings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'manage_booking' %}">Upcoming Bookings</a>
+            </li>
+          </ul>
+          {% else %}
+          <!--Guest view-->
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'booking' %}active{% endif %}"
+            href="{% url 'booking' %}">Bookings</a>
+          </li>
+          {% endif %}
+
 
         <!--Auth Links-->
         {% if request.user.is_authenticated %}

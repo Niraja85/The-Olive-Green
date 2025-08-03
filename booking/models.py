@@ -30,7 +30,7 @@ class Booking(models.Model):
     phone = models.CharField(max_length=15)
     date = models.DateField()
     time = models.CharField(max_length=5, choices=TIME_CHOICES)
-    number_of_guests = models.PositiveIntegerField(default=2)
+    number_of_guests = models.IntegerField()
     message = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

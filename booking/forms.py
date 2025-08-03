@@ -9,7 +9,7 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['name', 'phone', 'email', 'date',
-                  'time', 'number_of_guests' 'message']
+                  'time', 'number_of_guests', 'message']
         widget = {
             "date": forms.DateInput(attrs={"type": "date"}),
             "time": forms.Select(choices=Booking.TIME_CHOICES),
@@ -39,8 +39,7 @@ class BookingForm(forms.ModelForm):
 
             # Find tables that are large enough
             customer_tables = Table.objects.filter(
-                capacity__gte = number_of_guests
-            )
+                capacity__gte=number_of_guests)
 
             # Exclude already booked tables
             customer_tables = customer_tables.exclude(
@@ -48,7 +47,7 @@ class BookingForm(forms.ModelForm):
                 booking__time=time,
             )
 
-            if not customer_tables.exists()
+            if not customer_tables.exists():
                 raise ValidationError(
                     "No available tables for this time slot."
                     "Please call us to enquire."

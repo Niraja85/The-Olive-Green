@@ -7,4 +7,8 @@ urlpatterns = [
     path("manage/", views.BookingListView.as_view(), name='manage_booking'),
     path("admin/manage/", views.AdminBookingListView.as_view(),
          name='admin_booking'),
+    path("edit/<int:pk>/", views.BookingUpdateView.as_view(),
+         name='edit_booking'),
+    path("delete/<int:pk>/", views.BookingDeleteView.as_view(),
+         name='confirm_delete_booking'),
 ]

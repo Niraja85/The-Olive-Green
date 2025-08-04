@@ -25,7 +25,7 @@
           <a class="nav-link {% if url_name == 'menu' %}active{% endif %}" href="{%url 'menu' %}">Menu</a>
         </li>
         <!-- Menu management only by Admin -->
-         {% if user.is_staff %}
+        {% if user.is_staff %}
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle {% if url_name in 'create_menu, create_menu_items' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="False">Admin Menu</a>
           <ul class="dropdown-menu">
@@ -37,10 +37,10 @@
         {% endif %}
 
         <!-- Bookings Dropdown -->
-        {% if user.is_staff %}
+        {% if user.is_authenticated %}{% if user.is_staff %}
         <!--Admin view -->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle {% if url_name in 'booking manage_booking' %}active{% endif %}"
+          <a class="nav-link dropdown-toggle {% if url_name in 'booking manage_booking admin_booking' %}active{% endif %}"
           href="#" role="button" data-bs-toggle="dropdown">Bookings</a>
 
           <ul class="dropdown-menu">
@@ -55,9 +55,7 @@
             </li>
           </ul>
         </li>
-        {% endif %}
-
-        {% if user.is_authenticated %}
+        {% else %}
         <!--Customer view-->
         <li class="nav-item">
           <a class="nav-link dropdown-toggle {% if url_name in 'booking manage_booking' %}active{% endif %}"
@@ -71,7 +69,7 @@
               <a class="dropdown-item" href="{% url 'manage_booking' %}">Upcoming Bookings</a>
             </li>
           </ul>
-          {% else %}
+          {% endif %}{% else %}
           <!--Guest view-->
           <li class="nav-item">
             <a class="nav-link {% if url_name == 'booking' %}active{% endif %}"

@@ -44,14 +44,14 @@ class BookingListView(ListView, LoginRequiredMixin):
 
     def get_queryset(self):
         return Booking.objects.filter(
-            user = self.request.user,
-            date__gte = date.today()).order_by("date", "time")
+            user=self.request.user,
+            date__gte=date.today()).order_by("date", "time")
 
 
 # Admin views
 class AdminBookingListView(ListView, LoginRequiredMixin, UserPassesTestMixin):
     """A view to manage admin booking"""
-    model =  Booking
+    model = Booking
     template_name = "booking/admin_booking.html"
     context_object_name = "booking"
 
@@ -73,6 +73,54 @@ class AdminBookingListView(ListView, LoginRequiredMixin, UserPassesTestMixin):
             queryset = queryset.filter(date=date_filter)
 
             return queryset
+
+
+class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
+    """View to edit/update bookings by the user via a form"""
+    model = Booking
+    form_class = BookingForm
+    template_name = 'booking/edit_booking.html'
+    success_url = reverse_lazy("manage_booking")
+
+    def form_valid(self, form):
+        form.instance.user = self.get_object().user
+        form.instance.table = form.cleaned_data("table_obj")
+        messages.success(self.request, "Booking updated successfully")
+        return super().form_valid(form)
+
+    def test_func(self):
+        """ Test user is staff or allow only owner of the booking"""
+        if self.request.user.is_staff:
+            return True
+        else:
+            return self.request.user == self.get_object().user
+
+
+class BookingDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
+    """View to delete the booking"""
+    model = Booking
+    template_name = 'Booking/confirm_delete_booking.html'
+    success_url = reverse_lazy("manage_booking")
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, "Booking cancelled successfully.")
+        return super().delete(request, *args, **kwargs)
+
+    def test_func(self):
+        """Test user is staff or allow only the owner of the booking"""
+        if self.request.user.is_staff:
+            return True
+        else:
+            return self.request.user == self.get_object().user
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 from django import forms
 from .models import Booking, Table
-from datetime import datetime, timedelta
+from datetime import datetime
 from django.core.exceptions import ValidationError
 
 
@@ -56,8 +56,3 @@ class BookingForm(forms.ModelForm):
             # attach the first available table so the view can save it
             cleaned_data["table_obj"] = customer_tables.first()
             return cleaned_data
-
-
-
-
-

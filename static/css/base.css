@@ -86,6 +86,22 @@ img.logo {
     z-index: 1;
     margin-top: 50px;
  }
+ .card {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 1em;
+ }
+ .card-body {
+    width: 100%;
+    background-color: #D4DE95;
+    color: black;
+    margin: 0 0.5 em;
+    padding: 0.5em;
+    min-height: 100%;
+
+ }
  .card-title {
     color: green;
  }

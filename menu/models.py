@@ -31,7 +31,8 @@ class MenuItem (models.Model):
     menu = models.ForeignKey(Menu, related_name='items',
                              on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    category = models.CharField(max_length=50, choices=MENU_CATEGORIES, default='starter')
+    category = models.CharField(max_length=50, choices=MENU_CATEGORIES,
+                                default='starter')
     description = models.TextField(default="")
     price = models.FloatField(default=0.00)
 

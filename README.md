@@ -1,7 +1,7 @@
 # The-Olive-Green
 Project-portfolio-4
 
-The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria, Germany. The appp is a restaurant management system designed to allow staff to easily manage the menus and bookings. It also provides customers to make online bookings where they can make their table reservations. The live link can be found here: [Live Site- The Olive Green]().
+The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria, Germany. The appp is a restaurant management system designed to allow staff to easily manage the menus and bookings. It also provides customers to make online bookings where they can make their table reservations. The live link can be found here: [Live Site- The Olive Green](https://the-olive-green-c9c6086e4cc3.herokuapp.com/).
 
 [MockUp]()
 
@@ -156,7 +156,31 @@ The Navigation contains links for Home, Menu, Bookings and has allauth options.
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices.
 
-(+++ADDIMAGES of nav bar)
+![Navbar](docs/readme_images/navbar-1.png)
+![Navbar2](docs/readme_images/navbar-admin.png)
+
+`` USER STORY- As a restaurant owner I would like to have a restaurant home page, so that customers can view information about my restaurant``
+
+Implementation:
+
+**Home Page**
+
+The home page contains a hero image of the restaurant and information about the restaurant at the top of the page. This will immediately make it evident to the user, what the purpose of the website is.
+Under the information section, the opening hours of the restaurant and address with contact details is given, which will allow the user to locate the restaurant and operating times. and there are two buttons, 'View Menu' and 'Reserve a table'. These buttons will allow the user a quick way to navigate to the respective pages if they wish to view menu or make a booking.
+
+![Hero-Image](docs/readme_images/Hero-image.png)
+
+![About-Restaurant](docs/readme_images/About-restaurant.png)
+
+``USER STORY- As a developer, I need to create the footer to add the social media links, so that th ecustomer can follow us``
+
+Implementation:
+
+**Footer**
+
+A footer has been added to the bottom of the site, this contains a X, Instagram and Facebook link so that users can follow the restaurant on social media if they want to keep up to date with special offers not advertised on the website. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
+
+![Footer](docs/readme_images/Footer.png)
 
 
 

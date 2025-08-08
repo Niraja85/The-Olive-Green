@@ -52,7 +52,6 @@ class BookingForm(forms.ModelForm):
             return cleaned_data
 
         def __init__(self, *args, **kwargs):
-            #self.user = kwargs.pop("user", None)
             super().__init__(*args, **kwargs)
             today = datetime.now().date()
             self.fields['date'].widget.attrs['min'] = today.strftime("%m%d%Y")

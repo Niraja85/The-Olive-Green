@@ -1,11 +1,16 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block css %}
+{{ block.super }}
+<!--Booking specific css-->
+<link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+{% endblock %}
 
 {% block title %}Rserve a table{% endblock %}
 
 {% block content %}
-<!--Booking specific css-->
-<link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+
 
 <div class="booking-container">
     <div class="booking-info text-center pt-5">

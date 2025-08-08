@@ -22,16 +22,18 @@ class Booking(models.Model):
         (4, "7:00 pm -8:45 pm"),
         (5, "9:00 pm - 10:45 pm")
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             null=True, blank=True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE,
                               related_name="booking")
     name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
     date = models.DateField()
-    time = models.CharField(max_length=5, choices=TIME_CHOICES)
+    time = models.IntegerField(choices=TIME_CHOICES, default=1)
     number_of_guests = models.IntegerField()
     message = models.TextField(blank=True, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

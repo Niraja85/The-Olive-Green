@@ -21,6 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if os.path.exists('env.py'):
     import env
 
+DEVELOPMENT = os.environ.get('DEVELOPMENT', False)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -29,6 +31,7 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = DEVELOPMENT
 
 ALLOWED_HOSTS = ['.herokuapp.com',

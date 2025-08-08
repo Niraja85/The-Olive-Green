@@ -18,10 +18,10 @@ class BookingCreateView(CreateView, LoginRequiredMixin):
     success_url = reverse_lazy("manage_booking")
     login_url = "account_login"
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs["user"] = self.request.user
-        return kwargs
+    #def get_form_kwargs(self):
+    #   kwargs = super().get_form_kwargs()
+    #    kwargs["user"] = self.request.user
+    #    return kwargs
 
     def form_valid(self, form):
         form.instance.user = self.request.user

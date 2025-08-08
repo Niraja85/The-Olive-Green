@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Table, Booking
 
+
 # Register your models here.
 @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
@@ -13,6 +14,7 @@ class TableAdmin(admin.ModelAdmin):
         "number",
         "capacity"
     )
+
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):

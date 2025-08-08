@@ -1,6 +1,8 @@
-{% load static %} {% url 'account_login' as login_url %}
+{% load static %}
+{% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +50,9 @@
     </div>
     {% endif %} {% block content %}
     <!-- Contents here-->
-     {% endblock %} {% include 'includes/footer.html' %}
+     {% endblock %}
+
+     {% include 'includes/footer.html' %}
 
      {% block extra_js %}
      <script>

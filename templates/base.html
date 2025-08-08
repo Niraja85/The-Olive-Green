@@ -15,20 +15,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     {% endblock %}
 
+    <!-- Favicon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/favicon_io/apple-touch-icon.png' %}">
+     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon_io/favicon-32x32.png' %}">
+     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon_io/favicon-16x16.png' %}">
+
     <!--Import Css-->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% block onload_js %}
     <!--Bootstrap Js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-
     {% endblock %}
-    <title>The Olive Green {% block title %}{% endblock %}</title>
 
-    <!-- Favicon -->
-     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/favicon_io/apple-touch-icon.png' %}">
-     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon_io/favicon-32x32.png' %}">
-     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon_io/favicon-16x16.png' %}">
+    <title>The Olive Green {% block title %}{% endblock %}</title>
 </head>
 <body>
     {% include 'includes/header.html' %}

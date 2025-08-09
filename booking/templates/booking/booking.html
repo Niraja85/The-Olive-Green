@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css %}
-{{ block.super }}
+{% block extra_css %}
+<!-- Bootstrap css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+<!-- Base css -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
 <!--Booking specific css-->
 <link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
 {% endblock %}
@@ -11,108 +16,99 @@
 
 {% block content %}
 
-
 <div class="booking-container">
     <div class="booking-info text-center pt-5">
         <h2>RESERVE A TABLE</h2>
-        <p>Please fill in this form to book a table.
-            <br>
-            The table will be booked automatically.
-            <br>
-            You will receive a confirmation email once the booking is made.
-            <br>
-            If there is any issue, we will contact you as soon as possible.
-        </p>
-        <p><strong>For same day bookings: </strong>
-        <br>
-        Please call us directly on:
-        <br>
-        <a href="tel:4912345678911">+49 12345678911</a>
-        </p>
+        <p>You can fill up this form to book your table. <br>
+            Table will be booked automatically, <br>
+            and you will receive a confirmation email. <br>
+            If there is any issue, we will contact you as soon as possible.</p>
+        <p><strong>For same-day bookings:</strong><br> please call us directly on <br>
+            <a href="tel:4912345678911">4912345678911</a></p>
 
         {% if not user.is_authenticated %}
         <p class="text-center text-danger fw-bold">
-            You must <a href="{{ login_url }}">log in </a> or
-            <a href="{{ signup_url }}">to book a table.</a>
+            You must <a href="{{ login_url }}">log in</a> or
+            <a href="{{ signup_url }}">sign up</a> to book a table.
         </p>
         {% endif %}
+    </div>
 
-        {% if user.is_authenticated %}
-        <div class="booking-form">
-            {% if messages %}
-            <ul class="django-messages">
-                {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
+    {% if user.is_authenticated %}
+    <div class="booking-form">
+        {% if messages %}
+        <ul class="django-messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <ul class="errorlist">
+                {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
 
-            <form method="POST">
-                {% csrf_token %}
+            <label>Your name*</label>
+            {{ form.name }}
+            {% for error in form.name.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                {% if form.non_field_errors %}
-                <ul class="errorlist">
-                    {% for error in form.non_field_errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+            <label>Your email*</label>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Your name*</label>
-                {{ form.name }}
-                {% for error in form.name.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
+            <label>Your mobile*</label>
+            {{ form.phone }}
+            {% for error in form.phone.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Your email*</label>
-                {{ form.email }}
-                {% for error in form.email.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
+            <label>Date*</label>
+            {{ form.date }}
+            {% for error in form.date.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Your mobile*</label>
-                {{ form.phone }}
-                {% for error in form.phone.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
+            <label>Time*</label>
+            {{ form.time }}
+            {% for error in form.time.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Date*</label>
-                {{ form.date }}
-                {% for error in form.date.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
+            <label>Number of people*</label>
+            {{ form.number_of_guests }}
+            {% for error in form.number_of_guests %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Time*</label>
-                {{ form.time }}
-                {% for error in form.time.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
+            <label>Any Message</label>
+            {{ form.message }}
+            {% for error in form.message.errors %}
+            <div class="errorlist">{{ error }}</div>
+            {% endfor %}
 
-                <label>Number of people*</label>
-                {{ form.number_of_guests }}
-                {% for error in form.number_of_guests %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
-
-                <label>Any Message</label>
-                {{ form.message }}
-                {% for error in form.message.errors %}
-                <div class="errorlist">{{ error }}</div>
-                {% endfor %}
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        {% endif %}
+            <button type="submit">Send</button>
+        </form>
     </div>
+    {% endif %}
+</div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
+<script>
+document.addEventListener("DOMContentLoaded", function() {
     const dateField = document.querySelector("input[type='date']");
     if (dateField) {
-      const today = new Date().toISOString().split('T')[0];
-      dateField.setAttribute("min", today);
-    }
-    });
+        const today = new Date().toISOString().split('T')[0];
+        dateField.setAttribute("min", today);
+    }});
 </script>
 {% endblock %}

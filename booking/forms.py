@@ -19,6 +19,11 @@ class BookingForm(forms.ModelForm):
             ),
         }
 
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            today = datetime.now().date()
+            self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
+
         def clean(self):
             """Get form data and clean, check capacity and
             throw errors when table is not available
@@ -50,9 +55,3 @@ class BookingForm(forms.ModelForm):
             # attach the first available table so the view can save it
             cleaned_data["table_obj"] = customer_tables.first()
             return cleaned_data
-
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            today = datetime.now().date()
-            self.fields['date'].widget.attrs['min'] = today.strftime("%m%d%Y")
-

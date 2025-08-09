@@ -3,12 +3,12 @@
     flex-wrap: wrap;
     gap: 40px;
     padding: 20px;
-    background-color: #D4DE95;
+    background-color: white;
     color: #111;
 }
 .booking-info {
     flex: 1 1 300px;
-    background-color: #B3EBF2;
+    background-color: var(--beige);
     color: #111;
 }
 .booking-form {
@@ -27,7 +27,7 @@
 }
 .error-list {
     border: 1px solid #ff4d4d;
-    background-color: #B3EBF2;
+    background-color: black;
     color: #ff4d4d;
     padding: 10ppx 15px;
     margin-top: 10px;
@@ -41,7 +41,7 @@
 .booking-form input:focus,
 .booking-form select:focus,
 .booking-form textarea:focus {
-    background-color: yellow;
+    background-color: green;
 }
 .booking-form input,
 .booking-form select,
@@ -66,23 +66,24 @@
     cursor: pointer;
 }
 .booking-form button:hover {
-    background-color: yellow;
+    background-color: green;
     box-shadow: var(--small-box-shadow);
 }
 ul.django-messages {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
+    color: black;
 }
 ul.django-messages li.success {
     background-color: green;
-    color: white;
+    color: black;
     padding: 0.75rem;
     border-radius: 5px;
 }
 ul.django-messages li.error {
     background-color: red;
-    color: white;
+    color: black;
 }
 
 /* media queries */

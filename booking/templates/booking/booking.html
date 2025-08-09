@@ -87,7 +87,7 @@
 
             <label>Number of people*</label>
             {{ form.number_of_guests }}
-            {% for error in form.number_of_guests %}
+            {% for error in form.number_of_guests.errors %}
             <div class="errorlist">{{ error }}</div>
             {% endfor %}
 

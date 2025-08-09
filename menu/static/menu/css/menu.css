@@ -1,0 +1,56 @@
+#menu-page .menu-wrapper {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.menu-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ---- Category grid ---- */
+#menu-page .menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+/* ---- Category title ---- */
+#menu-page .category-title {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  font-style: italic;
+  color: green;
+  font-weight: bold;
+}
+
+/* ---- Individual menu card ---- */
+#menu-page .menu-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#menu-page .menu-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: .35rem;
+} */
+
+#menu-page .item-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+#menu-page .item-price {
+  font-weight: 700;
+}
+
+#menu-page .item-desc {
+  margin: 0 0 .5rem;
+  color: #555;
+}

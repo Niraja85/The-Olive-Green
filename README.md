@@ -182,6 +182,35 @@ A footer has been added to the bottom of the site, this contains a X, Instagram 
 
 ![Footer](docs/readme_images/Footer.png)
 
+``USER STORY - As a site Admin I can create or update the menu page content so that it is available on the site.``
+
+Implementation:
+
+**Create Menu/Menu-Items Page**
+
+A Create Menu page was created  to allow staff users to create new menu items via the UI without having to use the backend admin panel.
+
+![Create-Menu-Item](docs/readme_images/Create-menu-item.png)
+
+``USER STORY - As a user, I would like to be able to view the menu, so that I can decide if I want to dine at the restaurant.``
+
+Implementation:
+
+**View Menu Page**
+
+A Menu page has been created to allow users to see the current active menus and decide whether they are interested in the food and drinks that we offer at the restaurant. It is visible to all users regardless of logged in state, as it is not user friendly to restrict core information from users to force them into signing up.
+
+![View-Menus]()
+
+``USER STORY- As a admin user I can edit the menu/menu items so that updated version will be available``
+``USER STORY - As a staff user I can delete the menu/menu items so that Customer can view only what is available up to date``
+
+Implementation:
+
+
+
+
+
 
 
 

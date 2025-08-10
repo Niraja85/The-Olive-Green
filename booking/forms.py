@@ -1,5 +1,5 @@
 from django import forms
-from .models import Booking, Table
+from .models import Booking
 from datetime import datetime
 from django.core.exceptions import ValidationError
 
@@ -36,22 +36,4 @@ class BookingForm(forms.ModelForm):
             if not date or not time or not number_of_guests:
                 raise ValidationError("Please fill in all the required fields")
 
-            # Find tables that are large enough
-            customer_tables = Table.objects.filter(
-                capacity__gte=number_of_guests)
 
-            # Exclude already booked tables
-            customer_tables = customer_tables.exclude(
-                booking__date=date,
-                booking__time=time,
-            )
-
-            if not customer_tables.exists():
-                raise ValidationError(
-                    "No available tables for this time slot."
-                    "Please call us to enquire."
-                )
-
-            # attach the first available table so the view can save it
-            cleaned_data["table_obj"] = customer_tables.first()
-            return cleaned_data

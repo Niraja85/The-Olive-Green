@@ -10,7 +10,7 @@ from .models import Booking
 
 # User views
 class BookingCreateView(CreateView, LoginRequiredMixin):
-    """ View to render Crete bookings and
+    """ View to render create bookings and
     to allow user to create a booking"""
     model = Booking
     form_class = BookingForm
@@ -20,7 +20,6 @@ class BookingCreateView(CreateView, LoginRequiredMixin):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        form.instance.table = form.cleaned_data["table_obj"]
 
         # Clear any existing messages before adding new one"
         storage = messages.get_messages(self.request)
@@ -79,7 +78,6 @@ class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
 
     def form_valid(self, form):
         form.instance.user = self.get_object().user
-        form.instance.table = form.cleaned_data("table_obj")
         messages.success(self.request, "Booking updated successfully")
         return super().form_valid(form)
 

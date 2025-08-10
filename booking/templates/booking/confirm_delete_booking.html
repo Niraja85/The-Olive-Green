@@ -6,9 +6,7 @@
 <div class="container py-5 text-center">
     <h2>Are you sure you want to cancel this booking?</h2>
     <p><strong>{{ object.name }}</strong>on<strong>{{ object.date }}</strong>at<strong>{{ object.time }}</strong></p>
-    <p><strong>{{ object.table.number }}</strong>for<strong>{{ object.number_of_guests }}people</strong></p>
 
-    {% if messages %}
     <ul class="messages">
         {% for message in messages %}
         <li class="alert alert-{{ message.tags} }">{{ message }}</li>

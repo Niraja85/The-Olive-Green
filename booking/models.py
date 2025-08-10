@@ -4,15 +4,6 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Table(models.Model):
-    """Model to create tables"""
-    number = models.PositiveBigIntegerField(unique=True)
-    capacity = models.PositiveBigIntegerField()
-
-    def __str__(self):
-        return f"Table {self.number} (Seats {self.capacity})"
-
-
 class Booking(models.Model):
     """Model to create a booking"""
     TIME_CHOICES = (
@@ -24,8 +15,6 @@ class Booking(models.Model):
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              null=True, blank=True)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE,
-                              related_name="booking")
     name = models.CharField(max_length=30)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
@@ -39,10 +28,8 @@ class Booking(models.Model):
     class Meta:
         """Unique together will ensure to avoid double bookings.
         Order by date and then time"""
-        unique_together = ("table", "date", "time")
+        unique_together = ("date", "time")
         ordering = ("date", "time")
 
         def __str__(self):
-            return f"{self.name} | {self.date} {self.time} | Table {
-                self.table.number}"
-
+            return f"{self.name} | {self.date} {self.time}"

@@ -207,6 +207,22 @@ A Menu page has been created to allow users to see the current active menus and 
 
 Implementation:
 
+**Edit Menu Page**
+
+On the manage menus page a button was added to allow staff members to edit a menu when changes need to be made.
+
+![Edit-Menu]()
+
+``USER STORY- As a user, I would like to be able to create a new booking when I want to visit the restaurant``
+
+Implementation:
+
+**Create Booking Page**
+
+A booking page was created with a form that takes in the customer details and enables the user to easily make a booking through the UI.
+Extensive logic was added to the form validation to ensure that not only was there a table available for the users chosen time and date but also that it has enough seats for the number of guests. If the form is successfully submitted with the validation on the front end, logic is in place to find the lowest capacity table to seat the guests for the given date and time. This allows for seat optimisation to ensure we do not have small number of guests at tables that could have been booked for larger groups. Ensuring table optimisation adds revenue for the restaurant.
+
+![Create-Booking]()
 
 
 

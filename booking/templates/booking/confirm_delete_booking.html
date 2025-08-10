@@ -7,16 +7,18 @@
     <h2>Are you sure you want to cancel this booking?</h2>
     <p><strong>{{ object.name }}</strong>on<strong>{{ object.date }}</strong>at<strong>{{ object.time }}</strong></p>
 
-    <ul class="messages">
-        {% for message in messages %}
-        <li class="alert alert-{{ message.tags} }">{{ message }}</li>
-        {% endfor %}
-    </ul>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="alert alert-{{ message.tags }}">{{message}}</li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
     <form method="post">
         {% csrf_token %}
-        <a href="{% url manage_booking %}" class="btn btn-secondary">Cancel</a>
+        <a href="{% url 'manage_booking' %}" class="btn btn-secondary">Cancel</a>
         <button type="submit" class="btn btn-danger">Confirm Delete</button>
     </form>
 </div>
+{% endblock %}

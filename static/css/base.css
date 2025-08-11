@@ -111,4 +111,16 @@ footer {
     border-style: none;
 }
 
+/*Media query for small screens */
+/* Home Page */
+@media (min-width: 576px) and (max-width:770px){
+    .get-in-touch-card-body {
+        margin-bottom: 3.5rem;
+    }
+}
 
+@media (min-width: 771px) and (max-width: 991px){
+    .get-in-touch-card-body {
+        margin-bottom: 3rem;
+    }
+ }

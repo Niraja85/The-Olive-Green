@@ -421,6 +421,83 @@ The hero image was taken from Pexels which is a royalty free image site.
 * webencodings==0.5.1 - Required by bleach to handle web-safe text encoding formats
 * whitenoise==5.3.0 - Used to serve static files directly without use of static resource provider like cloundinary
 
+## Testing
+
+Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
+
+## Deployment
+
+### Development Setup
+
+This project uses a Python virtual environment located at `.venv`.
+
+#### Using VS Code (Recommended)
+- VS Code is configured to automatically use this environment via `.vscode/settings.json`.
+- If you open the project folder in VS Code, it will activate the environment automatically.
+
+#### Manual Setup (If Needed)
+
+If the environment doesn’t activate automatically, you can activate it manually by pasting it on terminal:
+`.venv\Scripts\Activate.ps1`
+
+### Version Control
+
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘The Olive Green’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+
+### Heroku Deployment
+
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+- Navigate to heroku and create an account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app
+- Click the resources tab and search for Heroku Postgres
+- Select hobby dev and continue
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (This should already exist with add on of postgres)
+  - CLOUNDINARY_URL: (cloudinary api url)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+The app should now be deployed.
+
+The live link can be found here: [Live Site](https://the-olive-green-c9c6086e4cc3.herokuapp.com/)
+
+### Run Locally
+
+Navigate to the GitHub Repository you want to clone to use locally:
+
+- Click on the code drop down button
+- Click on HTTPS
+- Copy the repository link to the clipboard
+- Open your IDE of choice (git must be installed for the next steps)
+- Type git clone copied-git-url into the IDE terminal
+
+The project will now have been cloned on your local machine for use.
+
+### Media
+* All the free images/hero image used on the site were gotten from https://www.pexels.com/
+
+## Credits
+
+* My mentor [Gareth-McGirr](https://github.com/Gareth-McGirr/) for his insightful suggestions and encouragement.
+
+* You Tube channel for Initial set up and way to navigate the apps [https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2]
 
 
 

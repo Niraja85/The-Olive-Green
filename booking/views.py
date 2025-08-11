@@ -92,7 +92,7 @@ class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
 class BookingDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
     """View to delete the booking"""
     model = Booking
-    template_name = 'Booking/confirm_delete_booking.html'
+    template_name = 'booking/confirm_delete_booking.html'
     success_url = reverse_lazy("manage_booking")
 
     def delete(self, request, *args, **kwargs):

@@ -170,7 +170,7 @@ Under the information section, the opening hours of the restaurant and address w
 
 ![Hero-Image](docs/readme_images/Hero-image.png)
 
-![About-Restaurant](docs/readme_images/About-restaurant.png)
+![About-Restaurant](docs/readme_images/About-restaurant%202.png)
 
 ``USER STORY- As a developer, I need to create the footer to add the social media links, so that th ecustomer can follow us``
 
@@ -253,12 +253,173 @@ Implementation:
 
 **Delete Booking**
 
+![Delete-Booking](docs/readme_images/Confirm-delete-booking.png)
 
+![Deleted-Booking](docs/readme_images/Deleted-booking.png)
 
+**Favicon**
+- A site wide favicon was implemented.
+- This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
+![Favicon](docs/readme_images/Favicon.png)
 
+### Features left to be implemented
+- In future I would like to implement table capacity and table numbers while making a booking reservation, by assigning smaller tables for smaller number of guests.
+- A map for the restaurant on the home page.
+- I would also like to add multi menu page with images.
 
+## The Skeleton Plane
 
+### Wireframes
+
+- Home Page
+
+![Homepage-wireframe](docs/readme_images/Homepage-wf.png)
+
+- Sign Up Page
+
+¡[Signup-wireframe](docs/readme_images/Signup-wf.png)
+
+- Signin Page
+
+![Signin-wireframe](docs/readme_images/Signin-wf.png)
+
+- Logout Page
+
+![Logout-wireframe](docs/readme_images/Logout-wf.png)
+
+- Manage Menu Page
+
+![Manage-menu](docs/readme_images/Manage-menu-wf.png)
+
+- Create Menu Page
+
+![Create-Menu-wireframe](docs/readme_images/Create-menu-wf.png)
+
+- View Menu Page
+
+![View-menu-wireframe](docs/readme_images/view-menu-wf.png)
+
+- Edit Menu Page
+
+![Edit-menu-wireframe](docs/readme_images/edit-menu-wf.png)
+
+- Delete Menu Page
+
+![Delete-menu-wireframe](docs/readme_images/delete-menu-wireframe.png)
+
+- Create Booking
+
+¡[Create-Booking-wireframe](docs/readme_images/Create-booking-wf.png)
+
+- Upcoming Bookings
+
+![Upcoming-Booking-wireframe](docs/readme_images/upcoming-booking-wf.png)
+
+- Edit Booking
+
+![Edit-Booking-wireframe](docs/readme_images/Edit-booking-wf.png)
+
+- Delete Booking
+
+![Delete-booking-wireframe](docs/readme_images/delete-booking-wf.png)
+
+### Database -Design
+
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application as it is connected the the main booking and menu tables, linked by primary/foreign key relationships.
+
+One-to-Many: A user can make multiple bookings
+
+Foreign Keys: Used to link bookings to users.
+
+Authentication: Managed via Django’s built-in and Allauth models.
+
+Entity relationship diagram was created using [DBeaver](https://dbeaver.io/download/) and shows the schemas for each of the models and how they are related.
+
+![Entity-Relationship-Diagram]()
+
+### Security
+
+Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
+
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
+### Imagery
+
+The Website logo was downloaded from google free source and Header/Footer colour was choosen to match website logo.
+
+The hero image was taken from Pexels which is a royalty free image site.
+
+## Technolgies
+
+- HTML
+  - The structure of the Website was developed using HTML as the main language.
+- CSS
+  - The Website was styled using custom CSS in an external file.
+- JavaScript
+  - A touch of JavaScript was used for client-side input control to enhance form usability.
+- Python
+  - Python was the main programming language used for the application using the Django Framework.
+- Visual Studio Code
+  - The website was developed using Visual Studio Code IDE
+- GitHub
+  - Source code is hosted on GitHub
+- Git
+  - Used to commit and push code during the development of the Website
+- UXwing.com and FontAwesome
+  - These were used for various icons throughout the site
+- Favicon.io
+  - favicon files were created at https://favicon.io/favicon-converter/
+- balsamiq
+  - wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
+- Google
+  - This was used to download the logo in header
+- TinyPNG
+  - This was used to compress the images used in the website for optimal load times.
+
+**Python Modules Used**
+
+* Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
+* Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and test user is authorized to perform actions
+* messages - Used to pass messages to the toasts to display feedback to the user upon actions
+* reverse_lazy - Used to define redirect URLs (like success_url) in class-based views without causing circular import issues.
+* date - Date was used in order to search for objects by date.
+* method_decorator - Used to wrap them with access restrictions.
+* staff_member_required - Used to restrict access to certain views only for staff users(bookings)
+
+**External Python Modules**
+
+* asgiref==3.8.1 - Used internally by Django to support asynchronous features
+* bleach==6.2.0 - HTML sanitizing library that cleans user-generated content; useful for rich text editors like Summernote
+* certifi==2025.6.15 - Used to secure HTTP requests by providing up-to-date SSL certificates
+* cffi==1.17.1 - Used for calling C code from Python - required by cryptography
+* charset-normalizer==3.4.2 - Used to detect and normalize text encoding; required by requests
+* cloudinary==1.36.0 - Cloundinary was set up for use but no custom uploads were made, settings remain for future development
+* crispy-bootstrap5==0.7 - This was used to allow bootstrap5 use with crispy forms
+* cryptography==45.0.4 - Installed as dependency with another package
+* defusedxml==0.7.1 - Installed as dependency with another package
+* dj-database-url==0.5.0 - Used to parse database url for production environment
+* dj3-cloudinary-storage==0.0.6 - Storage system to work with cloudinary
+* Django==4.2.23 - Framework used to build the application
+* django-allauth==0.57.0 - Used for the sites authentication system, sign up, sign in, logout, password resets ect.
+* django-crispy-forms==2.4 - Used to style the forms on render
+* django-summernote==0.8.20.0 - Used for menu page since its a integrated rich text editor for content creation
+* gunicorn==20.1.0 - Installed as dependency with another package
+* idna==3.10 - Installed as dependency with another package
+* oauthlib==3.3.1 - Installed as dependency with another package
+* psycopg2==2.9.10 - Needed for heroku deployment
+* pycparser==2.22 - Installed as dependency with another package
+* PyJWT==2.10.1 - Installed as dependency with another package
+* python3-openid==3.2.0 - Installed as dependency with another package
+* requests==2.32.4 - Installed as dependency with another package
+* requests-oauthlib==2.0.0 - Installed as dependency with another package (allauth authentication)
+* setuptools==80.9.0 - Used to manage Python packages and dependencies during builds or installations
+* six==1.17.0 - Installed as dependency with another package
+* sqlparse==0.5.3 - Installed as dependency with another package
+* tzdata==2025.2 - Installed as dependency with another package
+* urllib3==1.26.20 - Installed as dependency with another package
+* webencodings==0.5.1 - Required by bleach to handle web-safe text encoding formats
+* whitenoise==5.3.0 - Used to serve static files directly without use of static resource provider like cloundinary
 
 
 

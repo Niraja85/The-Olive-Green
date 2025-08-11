@@ -7,11 +7,11 @@ from django.contrib.auth.models import User
 class Booking(models.Model):
     """Model to create a booking"""
     TIME_CHOICES = (
-        (1, "12:00 pm - 1:00 pm"),
-        (2, "1:00 pm - 2:45 pm"),
-        (3, "3:00 pm - 4:00 pm"),
-        (4, "7:00 pm -8:45 pm"),
-        (5, "9:00 pm - 10:45 pm")
+        ('12:00', "12:00 pm - 1:00 pm"),
+        ('1:00', "1:00 pm - 2:45 pm"),
+        ('3:00', "3:00 pm - 4:00 pm"),
+        ('7:00', "7:00 pm -8:45 pm"),
+        ('9:00', "9:00 pm - 10:45 pm")
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              null=True, blank=True)

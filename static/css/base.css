@@ -20,7 +20,6 @@
 html, body {
     height: 100%;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -61,13 +60,13 @@ img.logo {
 }
 
 /* Footer */
- footer {
+footer {
     display: flex;
     flex-shrink: 0;
     background-color: var(--olive);
+    border-top: var(--border);
     justify-content: center;
     align-items: center;
-    border-top: var(--border);
  }
  .social-icon {
     height: 2rem;

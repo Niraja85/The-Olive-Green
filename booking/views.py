@@ -1,6 +1,6 @@
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from datetime import date
+from datetime import date, timedelta
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db.models import Q
@@ -37,36 +37,18 @@ class BookingListView(ListView, LoginRequiredMixin):
     context_object_name = "booking"
 
     def get_queryset(self):
-        return Booking.objects.filter(
-            user=self.request.user,
-            date__gte=date.today()).order_by("date", "time")
-
-
-# Admin views
-class AdminBookingListView(ListView, LoginRequiredMixin, UserPassesTestMixin):
-    """A view to manage admin booking"""
-    model = Booking
-    template_name = "booking/admin_booking.html"
-    context_object_name = "booking"
-
-    def test_func(self):
-        return self.request.user.is_staff
-
-    def get_queryset(self):
-        queryset = Booking.objects.filter(
-            date__gte=date.today()).order_by("date", "time")
-
-        search_query = self.request.GET.get("q")
-        date_filter = self.request.GET.get("date")
-
-        if search_query:
-            queryset = queryset.filter(Q(name__icontains=search_query)
-                                       | Q(email__icontains=search_query))
-
-        if date_filter:
-            queryset = queryset.filter(date=date_filter)
-
-        return queryset
+        if self.request.user.is_staff:
+            # returns all bookings with date greater than yesterday
+            return Booking.objects.filter(
+                date__gt=(date.today()-timedelta(days=1))
+                )
+        else:
+            # returns all bookings with logged in customer
+            # with date greater than yesterday.
+            return Booking.objects.filter(
+                user=self.request.user,
+                date__gte=(date.today()-timedelta(days=1))
+                )
 
 
 class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):

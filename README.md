@@ -53,7 +53,7 @@ The Kanban board was created using github projects and can be located [here](htt
 
 #### Epics
 
-The project had 8 manin Epics (milestones):
+The project had 7 main Epics (milestones):
 
 * EPIC 1 - Base Setup:
 
@@ -113,7 +113,6 @@ The following user stories were completed (by epics):
     * As a staff user, I want to be able to create a new menu when we have new dishes to offer.
     * As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant.
     * As a staff user, I want to be able to edit a menu when updates are needed.
-    * As a staff member, I would like to receive feedback when I create or update menus so that I can see they have worked.
     * As a staff user, I want to be able to delete a menu when it is no longer used.
 
 * Epic 5 - Booking:
@@ -122,7 +121,6 @@ The following user stories were completed (by epics):
     * As a user, I would like to view my bookings when I need to check the information.
     * As a user, I would like to be able to edit a booking so that I can make changes when needed.
     * As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully.
-    * As a staff user, I want to be able to search a booking by reference to save time searching.
     * As a user I would like to delete a booking when I no longer require it.
 
 * Epic 6 - Deployment:
@@ -161,14 +159,11 @@ The Navigation contains links for Home, Menu, Bookings and has allauth options.
   * Bookings (Drop Down):
     * Create Booking -> bookings.html - Visible to logged in users
     * Upcoming BookingS -> manage_bookings.html - Visible to logged in users
-    * Past BookingS -> past_bookings.html - Visible to logged in users
-    * All Bookings(Admin) --> admin_manage_bookings.html - visible to admin only
   * Menus (Drop Down):
     * View Menus -> menu.html - Visible to all
     * Create Menu -> create_menu.html - Visible to staff
     * Create Menu Item -> create_menu_items.html - Visible to staff
     * Manage Menu -> manage_menu.html - Visible to staff
-  * Feedback
 
   * Login -> login.html - Visible to logged out users
   * Register -> signup.html - Visible to logged out users

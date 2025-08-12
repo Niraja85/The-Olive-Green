@@ -3,7 +3,7 @@ Project-portfolio-4
 
 The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria, Germany. The appp is a restaurant management system designed to allow staff to easily manage the menus and bookings. It also provides customers to make online bookings where they can make their table reservations. The live link can be found here: [Live Site- The Olive Green](https://the-olive-green-c9c6086e4cc3.herokuapp.com/).
 
-[MockUp]()
+![MockUp](docs/readme_images/Mockup.png)
 
 ## Table of Contents
 - [User-Experience-Design](#user-experience-design)
@@ -306,7 +306,7 @@ Implementation:
 
 - Sign Up Page
 
-¡[Signup-wireframe](docs/readme_images/Signup-wf.png)
+![Signup-wireframe](docs/readme_images/Signup-wf.png)
 
 - Signin Page
 
@@ -338,7 +338,7 @@ Implementation:
 
 - Create Booking
 
-¡[Create-Booking-wireframe](docs/readme_images/Create-booking-wf.png)
+![Create-Booking-wireframe](docs/readme_images/Create-booking-wf.png)
 
 - Upcoming Bookings
 

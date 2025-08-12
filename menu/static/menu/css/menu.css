@@ -18,10 +18,12 @@
 /* ---- Category title ---- */
 #menu-page .category-title {
   margin: 0 0 1rem;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-style: italic;
   color: green;
   font-weight: bold;
+  justify-self: center;
+  border-bottom: double;
 }
 
 /* ---- Individual menu card ---- */
@@ -42,7 +44,7 @@
 
 #menu-page .item-title {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 

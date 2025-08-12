@@ -11,7 +11,7 @@
         <h3 class="text-primary border-bottom pb-2">{{group.grouper|title}}</h3>
 
         {% for item in group.list %}
-        <div claas="menu-item-card mb-3 border p-3 rounded">
+        <div class="menu-item-card mb-3 border p-3 rounded">
             <h4>{{item.title|safe}}</h4>
             <p>{{item.description|safe}}</p>
         {% if item.pk %}

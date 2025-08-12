@@ -66,7 +66,7 @@ class AdminBookingListView(ListView, LoginRequiredMixin, UserPassesTestMixin):
         if date_filter:
             queryset = queryset.filter(date=date_filter)
 
-            return queryset
+        return queryset
 
 
 class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):

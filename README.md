@@ -364,7 +364,7 @@ Authentication: Managed via Django’s built-in and Allauth models.
 
 Entity relationship diagram was created using [DBeaver](https://dbeaver.io/download/) and shows the schemas for each of the models and how they are related.
 
-![Entity-Relationship-Diagram]()
+![Entity-Relationship-Diagram](docs/readme_images/TheOliveGreen%20ERD%204.png)
 
 ### Security
 

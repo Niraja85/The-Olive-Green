@@ -75,15 +75,11 @@ The project had 8 manin Epics (milestones):
 
     * The booking epic is for all stories that relate to creating, viewing, updating and deleting bookings. This allows the staff to easily view upcoming bookings, manage the bookings and also for customers to book and manage their own reservations.
 
-* EPIC 6 - Feedback:
-
-    * The Feedback is for providing a rating system so that customers can rate their dining experience, which in turn will help improve the restaurant's service quality and help provide other customers to choose the reaturant for dining.
-
-* EPIC 7 - Deployment Epic:
+* EPIC 6 - Deployment Epic:
 
     * This epic is for all stories related to deploying the app to heroku so that the site is live for staff and customer use.
 
-* EPIC 8 - Documentation:
+* EPIC 7 - Documentation:
 
     * This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
 
@@ -129,16 +125,12 @@ The following user stories were completed (by epics):
     * As a staff user, I want to be able to search a booking by reference to save time searching.
     * As a user I would like to delete a booking when I no longer require it.
 
-* Epic 6 - Feedback:
-
-    * As a user, I would like to be able to give a feedback about my dining experience in a star rating format, so that it helps other users choose the restaurant and helps the restaurant owner improve the service.
-
-* Epic 7 - Deployment:
+* Epic 6 - Deployment:
 
     * As a developer, I need to set up whitenoise so that my static files are served in deployment.
     * As a developer, I need to deploy the project to heroku so that it is live for customers.
 
-* Epic 8 - Documentation:
+* Epic 7 - Documentation:
 
     * Tasks:
         * Complete readme documentation.
@@ -295,6 +287,7 @@ Implementation:
 - In future I would like to implement table capacity and table numbers while making a booking reservation, by assigning smaller tables for smaller number of guests.
 - A map for the restaurant on the home page.
 - I would also like to add multi menu page with images.
+- I would also like to add a feedback section, where customers can rate their dining experience.
 
 ## The Skeleton Plane
 
@@ -523,7 +516,7 @@ The project will now have been cloned on your local machine for use.
 
 ## Credits
 
-* My mentor [Gareth-McGirr](https://github.com/Gareth-McGirr/) for his insightful suggestions and encouragement.
+* My mentor [Gareth-McGirr](https://github.com/Gareth-McGirr/) for his insightful suggestions and encouragement throughout the project.
 
 * You Tube channel for Initial set up and way to navigate the apps [https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2]
 

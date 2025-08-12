@@ -6,6 +6,34 @@ The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria,
 [MockUp]()
 
 ## Table of Contents
+- [User-Experience-Design](#user-experience-design)
+  - [The-Strategy-Plane](#the-strategy-plane)
+    - [Site-Goals](#site-goals)
+    - [Agile-Planning](#agile-planning)
+      - [Epics](#epics)
+      - [User-Stories](#user-stories)
+  - [The-Scope-Plane](#the-scope-plane)
+  - [The-Structure-Plane](#the-structure-plane)
+    - [Features](#features)
+    - [Features-Left-To-Be-Implemented](#features-left-to-be-implemented)
+  - [The-Skeleton-Plane](#the-skeleton-plane)
+    - [Wireframes](#wireframes)
+    - [Database-Design](#database-design)
+    - [Security](#security)
+  - [The-Surface-Plane](#the-surface-plane)
+    - [Design](#design)
+    - [Imagery](#imagery)
+  - [Technologies](#technologies)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+    - [Development-Setup](#development-setup)
+    - [Version-Control](#version-control)
+    - [Heroku-Deployment](#heroku-deployment)
+    - [Run-Locally](#run-locally)
+  - [Media](#media)
+  - [Credits](#credits)
+
+
 
 
 # User Experience Design
@@ -350,7 +378,7 @@ The Website logo was downloaded from google free source and Header/Footer colour
 
 The hero image was taken from Pexels which is a royalty free image site.
 
-## Technolgies
+## Technologies
 
 - HTML
   - The structure of the Website was developed using HTML as the main language.

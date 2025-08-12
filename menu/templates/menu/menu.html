@@ -2,40 +2,37 @@
 {% load static %}
 
 {% block extra_css %}
-<!--Bootstrap Css Link-->
+<!-- Include base CSS and Bootstrap manually because base.html only puts Bootstrap inside the block -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
-<!--Import Css-->
-
+ <!-- base.css -->
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
-<!-- Menu specific CSS-->
+<!-- menu specific css -->
 <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
 {% endblock %}
 
 {% block content %}
-
- <section id="menu-page" class="menu-wrapper">
+<section id="menu-page" class="menu-wrapper">
     <h1 class="text-center">Our Menu</h1>
     <div class="menu-grid">
         {% for category_label, items in grouped_menu.items %}
         <div class="category-box">
-            <h2 class ="category-title">{{ category_label|safe }}</h2>
+            <h2 class="category-title">{{ category_label }}</h2>
 
             {% for item in items %}
-            <article class=" menu-card">
+            <article class="menu-card">
                 <header class="menu-card__head">
-                    <h3 class="item-title" >{{ item.title|safe }}</h3>
-                    <span class="item-price">{{ item.price|floatformat:2|safe }}</span>
+                    <h3 class="item-title">{{ item.title }}</h3>
+                    <span class="item-price">£{{ item.price|floatformat:2 }}</span>
                 </header>
-                <p class= "item-desc">{{ item.description|safe}}</p>
+
+                <p class="item-desc">{{ item.description|safe }}</p>
             </article>
             {% endfor %}
         </div>
         {% endfor %}
     </div>
- </section>
-
- {% endblock %}
+</section>
+{% endblock %}
 
 

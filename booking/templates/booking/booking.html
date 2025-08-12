@@ -24,18 +24,18 @@
 
 <div class="booking-container">
     <div class="booking-info text-center pt-5">
-        <h2>RESERVE A TABLE</h2>
+        <h1>RESERVE A TABLE</h1>
         <p>You can fill up this form to book your table. <br>
             Table will be booked automatically, <br>
             and you will receive a confirmation email. <br>
             If there is any issue, we will contact you as soon as possible.</p>
         <p><strong>For same-day bookings:</strong><br> please call us directly on <br>
-            <i class="fa-solid fa-phone"></i> <a class="text-danger fw-bold" href="tel:4912345678911">4912345678911</a></p>
+            <i class="fa-solid fa-phone"></i> <a class="text-success fw-bold" href="tel:4912345678911">4912345678911</a></p>
 
         {% if not user.is_authenticated %}
         <p class="text-center fw-bold">
-            You must <a class="text-danger" href="{{ login_url }}">log in</a> or
-            <a class="text-danger" href="{{ signup_url }}">sign up</a> to book a table.
+            You must <a class="text-success" href="{{ login_url }}">log in</a> or
+            <a class="text-success" href="{{ signup_url }}">sign up</a> to book a table.
         </p>
         {% endif %}
     </div>

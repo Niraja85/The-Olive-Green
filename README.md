@@ -185,7 +185,7 @@ Under the information section, the opening hours of the restaurant and address w
 
 ![Hero-Image](docs/readme_images/Hero-image.png)
 
-![About-Restaurant](docs/readme_images/about-home.png)
+![About-Restaurant](docs/readme_images/about-restaurant%203.png)
 
 ``USER STORY- As a developer, I need to create the footer to add the social media links, so that th ecustomer can follow us``
 
@@ -387,7 +387,7 @@ The hero image was taken from Pexels which is a royalty free image site.
 - Favicon.io
   - favicon files were created at https://favicon.io/favicon-converter/
 - balsamiq
-  - wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
+  - wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/
 - Google
   - This was used to download the logo in header
 - TinyPNG

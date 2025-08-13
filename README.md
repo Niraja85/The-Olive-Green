@@ -185,7 +185,7 @@ Under the information section, the opening hours of the restaurant and address w
 
 ![Hero-Image](docs/readme_images/Hero-image.png)
 
-![About-Restaurant](docs/readme_images/About-restaurant%202.png)
+![About-Restaurant](docs/readme_images/about-home.png)
 
 ``USER STORY- As a developer, I need to create the footer to add the social media links, so that th ecustomer can follow us``
 
@@ -215,7 +215,7 @@ Implementation:
 
 A Menu page has been created to allow users to see the current active menus and decide whether they are interested in the food and drinks that we offer at the restaurant. It is visible to all users regardless of logged in state, as it is not user friendly to restrict core information from users to force them into signing up.
 
-![View-Menu](docs/readme_images/View-Menu.png)
+![View-Menu](docs/readme_images/view-menu%202.png)
 
 ``USER STORY- As a admin user I can edit the menu/menu items so that updated version will be available``
 ``USER STORY - As a staff user I can delete the menu/menu items so that Customer can view only what is available up to date``

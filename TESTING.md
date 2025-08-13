@@ -267,7 +267,8 @@ Testing was focused to ensure the following criteria were met:
 
 - All forms have associated labels or aria-labels so that this is read out on a screen reader to users who tab to form inputs
 - Color contrasts meet a minimum ratio as specified in [WCAG 2.1 Contrast Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-- Heading levels on home page were skipped so as to keep the font-size reduced. All the other pages geadings were not missed or skipped.
+- Heading levels on home page were skipped so as to keep the font-size reduced. All the other pages'
+headings were not missed or skipped.
 - All content is contained within landmarks to ensure ease of use for assistive technology, allowing the user to navigate by page regions
 - All not textual content had alternative text or titles so descriptions are read out to screen readers
 - HTML page lang attribute has been set
@@ -280,27 +281,35 @@ All pages were run through the [w3 HTML Validator](https://validator.w3.org/). I
 
 Due to the django templating language code used in the HTML files, these could not be copy and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will be only the HTML rendered code.
 
-![HTML Validator]()
+![HTML-Validator-Home](docs/readme_images/HTML-Home.png)
 
-All pages were run through the official [Pep8ci](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to no newline at end of file and missing white space after. All of these errors were resolved but still showing in validator.
+![HTML-Validator-Menu](docs/readme_images/HTML-menu.png)
+
+![HTML-Validator-Booking](docs/readme_images/HTML-Booking-form.png)
+
+All pages were run through the official [Pep8ci](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. In booking's forms.py length of line was too long, but changing it was causing syntax error, so I let it be.
 
 In settings.py file - The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
-![PEP8ci]()
+![PEP8ci](docs/readme_images/PEP-8-validator.png)
 
 JavaScript code was run through [JSHINT](https://jshint.com) javascript validator.
 
-![JS validator]()
+![JS-validator](docs/readme_images/Java-validator%202.png)
 
 CSS code was run through [W3C](https://jigsaw.w3.org/) CSS validator.
 
-![CSS Validator]()
+![CSS-Validator-base](docs/readme_images/CSS-base.png)
+
+![CSS-Validator-Menu](docs/readme_images/CSS-Menu.png)
+
+![CSS-Validator-Booking](docs/readme_images/CSS-Menu.png)
 
 ## Lighthouse Report
-![Home]()
+![Home](docs/readme_images/Home-LH.png)
 
-![Bookings]()
+![Bookings](docs/readme_images/Booking-LH.png)
 
-![Menu]()
+![Menu](docs/readme_images/Menu-LH.png)
 
 ## Responsiveness
 

@@ -3,7 +3,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from datetime import date, timedelta
 from django.contrib import messages
 from django.urls import reverse_lazy
-from django.db.models import Q
 from .forms import BookingForm
 from .models import Booking
 
@@ -87,27 +86,3 @@ class BookingDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
             return True
         else:
             return self.request.user == self.get_object().user
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

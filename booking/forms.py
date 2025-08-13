@@ -35,5 +35,3 @@ class BookingForm(forms.ModelForm):
 
             if not date or not time or not number_of_guests:
                 raise ValidationError("Please fill in all the required fields")
-
-

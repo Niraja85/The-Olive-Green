@@ -25,4 +25,3 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('booking/', include('booking.urls')),
 ]
-

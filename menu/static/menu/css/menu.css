@@ -40,16 +40,15 @@
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: .35rem;
-} */
+}
 
 #menu-page .item-title {
-  margin: 0;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 #menu-page .item-price {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 #menu-page .item-desc {

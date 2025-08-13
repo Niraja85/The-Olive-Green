@@ -77,14 +77,3 @@ class EditMenuItemView(UpdateView):
     def form_valid(self, form):
         messages.success(self.request, 'Menu item updated successfully')
         return super(EditMenuItemView, self).form_valid(form)
-
-
-
-
-
-
-
-
-
-
-

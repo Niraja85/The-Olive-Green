@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = DEVELOPMENT
 
 ALLOWED_HOSTS = ['.herokuapp.com',
-                 '127.0.0.1',]
+                 '127.0.0.1', ]
 
 
 # Application definition
@@ -126,7 +126,7 @@ WSGI_APPLICATION = 'main_project.wsgi.application'
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 
 # Password validation

@@ -11,6 +11,9 @@
     background-color: var(--beige);
     color: #111;
 }
+.booking-info a {
+    color: #0000FF;
+}
 .booking-form {
     flex: 1 1 300px;
 }
@@ -30,7 +33,7 @@
     border: 1px solid #ff4d4d;
     background-color: black;
     color: #ff4d4d;
-    padding: 10ppx 15px;
+    padding: 10px 15px;
     margin-top: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -159,7 +162,7 @@ ul.django-messages li.error {
 /* Media queries for larger screens */
 @media (min-width: 992px) {
     .booking-container {
-        flex-direction: colum;
+        flex-direction: column;
         padding: 40px;
         gap: 40px;
     }

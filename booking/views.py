@@ -8,7 +8,7 @@ from .models import Booking
 
 
 # User views
-class BookingCreateView(CreateView, LoginRequiredMixin):
+class BookingCreateView(LoginRequiredMixin, CreateView):
     """ View to render create bookings and
     to allow user to create a booking"""
     model = Booking
@@ -29,7 +29,7 @@ class BookingCreateView(CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class BookingListView(ListView, LoginRequiredMixin):
+class BookingListView(LoginRequiredMixin, ListView):
     """View to render manage bookings"""
     model = Booking
     template_name = "booking/manage_booking.html"
@@ -50,7 +50,7 @@ class BookingListView(ListView, LoginRequiredMixin):
                 )
 
 
-class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
+class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """View to edit/update bookings by the user via a form"""
     model = Booking
     form_class = BookingForm
@@ -70,7 +70,7 @@ class BookingUpdateView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
             return self.request.user == self.get_object().user
 
 
-class BookingDeleteView(DeleteView, LoginRequiredMixin, UserPassesTestMixin):
+class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """View to delete the booking"""
     model = Booking
     template_name = 'booking/confirm_delete_booking.html'

@@ -19,7 +19,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 if os.path.exists('env.py'):
-    import env
+    import env # noqa
 
 
 # Quick-start development settings - unsuitable for production
@@ -136,16 +136,28 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+            ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+            ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+       'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -169,10 +181,13 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/account/login'
+LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_URL = '/account/logout'
+LOGOUT_URL = '/accounts/logout'
 LOGOUT_REDIRECT_URL = '/'
+
+# Redirect after email confirmation
+ACCOUNT_CONFIRM_EMAIL_REDIRECT_URL = '/accounts/login/'
 
 
 # Static files (CSS, JavaScript, Images)

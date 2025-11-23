@@ -22,3 +22,16 @@ class MenuItemForm(forms.ModelForm):
             "description": "Description",
             "price": "Price",
         }
+        widgets = {
+            "price": forms.NumberInput(attrs={"min": "0", "step": "0.01"}),
+        }
+
+    """
+    Prevent negative prices
+    """
+    def clean_price(self):
+        price = self.cleaned_data.get("price")
+
+        if price is not None and price < 0:
+            raise forms.ValidationError("Price cannot be negative.")
+        return price

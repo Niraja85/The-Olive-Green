@@ -10,7 +10,7 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['name', 'phone', 'email', 'date',
                   'time', 'number_of_guests', 'message']
-        widget = {
+        widgets = {
             "date": forms.DateInput(attrs={"type": "date"}),
             "time": forms.Select(choices=Booking.TIME_CHOICES),
             'message': forms.Textarea(
@@ -19,19 +19,23 @@ class BookingForm(forms.ModelForm):
             ),
         }
 
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            today = datetime.now().date()
-            self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        today = datetime.now().date()
+        self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
 
-        def clean(self):
-            """Get form data and clean, check capacity and
-            throw errors when table is not available
-            """
-            cleaned_data = super().clean()
-            date = cleaned_data.get("date")
-            time = cleaned_data.get("time")
-            number_of_guests = cleaned_data.get("number_of_guests")
+    def clean(self):
+        """Get form data and clean, check capacity and
+        throw errors when table is not available
+        """
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        time = cleaned_data.get("time")
+        number_of_guests = cleaned_data.get("number_of_guests")
 
-            if not date or not time or not number_of_guests:
-                raise ValidationError("Please fill in all the required fields")
+        if not date or not time or not number_of_guests:
+            raise ValidationError("Please fill in all the required fields")
+        if date and date < datetime.now().date():
+            self.add_error("date", "Booking date cannot be in the past")
+
+        return cleaned_data

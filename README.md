@@ -10,8 +10,10 @@ The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria,
   - [The-Strategy-Plane](#the-strategy-plane)
     - [Site-Goals](#site-goals)
     - [Agile-Planning](#agile-planning)
-      - [Epics](#epics)
       - [User-Stories](#user-stories)
+        - [Epics](#epics)
+        - [Milestones](#milestones)
+        - [Sprints](#sprints)
   - [The-Scope-Plane](#the-scope-plane)
   - [The-Structure-Plane](#the-structure-plane)
     - [Features](#features)
@@ -55,7 +57,7 @@ The Kanban board was created using github projects and can be located [here](htt
 
 ### User Stories
 
-#### Epics
+#### EPICS
 
 The project had 4 main Epics:
 
@@ -65,6 +67,8 @@ The project had 4 main Epics:
 * Bookings
 
 The Epics were further divided into 7 Milestones:
+
+#### MILESTONES
 
 * MILESTONE 1 - Base Setup:
 
@@ -131,6 +135,8 @@ The Epics were further divided into 7 Milestones:
         * Complete readme documentation.
         * Complete testing documentation writeup.
 
+#### SPRINTS
+
 The user stories were completed by dividing the milestones into 3 sprints:
 
 * SPRINT 1:
@@ -158,7 +164,187 @@ The user stories were completed by dividing the milestones into 3 sprints:
       - Hero image to be added.
       - Conatct Details.
 
+  * AllAuth Authentication:
 
+    * As a developer, I need to implement allauth so that users can signup an d have access to the website features.
+
+    * Acceptance criteria:
+
+      - Installing AllAuth
+      - Users are able to signup and then login.
+
+
+  * Create base.html:
+
+    * As a developer, I need to create the base.html page and structure so that other pages can reuse the layout.
+
+    * Acceptance criteria:
+      - Base.html page created with HTML page structure and block tags.
+      - Navigation menu added
+      - Footer added
+    * Dependencies
+      This story is dependent on Create navbar and Create footer for completion.
+
+  * Create Footer:
+
+    * As a developer I need to create the footer with social media links.
+
+    * Acceptance Criteria:
+
+      - Footer created.
+      - Social Media link column
+      - Social media links open in new tab.
+      - Social media links navigate to the correct pages.
+
+  * Create Navbar:
+
+    * As a developer, I need to create the navbar so that users can navigate the website from any device.
+
+    * Acceptance Criteria:
+      - Navbar created with links to:
+
+        - Home- Visible to all users.
+        - Bookings- Directed to a page to signup or login to make a booking to all users.
+            - Create Booking- Visible to logged in users.
+            - Upcoming Booking- Only logged in users can see their own booking, and staff too.
+        - Menu - Visible to all.
+        - Admin Menu - Create Menu, Edit Menu, and manage menu - Visible to staff
+        - Register - Shown to non logged in users only.
+        - Login - Shown to non logged in users only.
+        - Logout - Shown to logged in users only.
+
+  * Create Static resources:
+
+    * As a developer, I need to create static resources so that images, css and javascript work on the website.
+
+    * Acceptance Criteria:
+    - Create static folder and settings.
+    - Create sub folders for images, css and javascript.
+
+* SPRINT 2:
+
+  * View a Menu:
+
+    * As a user, I would like to be able to view menus, so that I can decide if I want to dine at the restaurant.
+
+    * Acceptance Criteria:
+      - Menus are displayed to any user regardless of their login status.
+      - Only active menus are displayed.
+
+  * Create a Menu:
+
+    * As a staff user I should be able to create a new menu whe we have new dishes to offer.
+
+    * Acceptance Criteria:
+      - Staff is able to add a new dish to the menu.
+      - 403 error page displayed when unauthorized users try to access the URL
+
+  * Edit a menu:
+
+    * As a staff user, I want to be able to be edit a menu when updates are needed.
+
+    * Acceptance criteria:
+      - Staff is able to edit the menu.
+      - 403 error page displayed when unauthorized users try to access the URL
+
+  * Delete a menu:
+
+    * As a staff user, I want to be able to delete a menu item, when it is not available so that the menu is well updated.
+
+    * Acceptance criteria:
+      - Staff are able to delete a menu item.
+      - 403 error page displayed when unauthorized users try to access the URL.
+
+  * Create a Booking:
+
+    * As a user, I would like to be able to create a new booking when I want to visit the restaurant so that I can reserve a table.
+
+    * Acceptance Criteria:
+      - User is successfully able to create a booking with a form on create booking page.
+      - Validation errors shown when any invalid inputs are given or unavavilable timeslots.
+
+  * Edit a booking:
+
+    * As a user, I want to be able to edit a booking so that I can make changes when required.
+
+    * Acceptance Criteria:
+      - Staff can edit all bookings.
+      - Customer can edit their own bookings.
+      - Validation errors are shown to users when an invalid input or unavailable time slots are entered.
+      - 403 error is thrown when an unauthorized user accesses the URL.
+
+  * Delete a Booking:
+
+    * As a user I want to be able to delete a booking when no longer required so that restaurant is informed about available bookings.
+
+    * Acceptance Criteria:
+      - Staff are able to delete a booking.
+      - Customer can delete only their booking.
+      - 403 error page displayed when unauthorized users try to access the URL of a delete booking.
+      - Confirmation screen displayed to confirm if sure you want to delete.
+
+  * View Bookings:
+
+    * As a user I want to be able to view my booking so that I can refer back to it whenever I need or forget.
+
+    * Acceptance criteria:
+      - Users can view their own bookings.
+      - Staff can view all bookings.
+
+* SPRINT 3:
+
+  * Style AllAuth Pages:
+
+    * As a site owner, I would like to have custom styling for the login, logout and register pages so that it is in sync with the website styling.
+
+    * Acceptance criteria:
+      - Login, Signup, and Logout pages have custom styling.
+
+  * Setup White Noise for Static files:
+
+    * As a developer I need to set up whitenoise so that my static files are served in deployment.
+
+    * Acceptance criteria:
+      - Static files are displayed on live site.
+
+  * Deploy to Heroku:
+
+    * As a developer, I need to deploy the project to heroku so that it is live for customers.
+
+    * Acceptance Criteria:
+      - Project is successfully deployed to heroku and matches the development version.
+
+  * Create 404 Error page:
+
+    * As a developer I need to implement a 404 error page to alert users when they have accessed a page that does not exist.
+
+    * Acceptance Criteria:
+      - 404.html created.
+      - Error message is explained.
+
+  * Create 403 Error page:
+
+    * As a developer, I need to implement a 403 error page to redirect unauthorised users to so that I can secure my views.
+
+    * Acceptance Criteria:
+      - 403.html is created.
+      - Error message is explained.
+
+  * Create 500 Error Page:
+
+    * As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.
+
+    * Acceptance Criteria:
+      - 500.html is created.
+      - Error message is explained.
+
+  * Write Testing.md:
+
+    * Complete running all the website acessibility, lighthouse and CSS, Javascript and HTMl Validation testing and document it in TESTING.md.
+
+  * Write Readme.md:
+
+    * Complete writing Readme.md documentation.
 
 *Go back to the [top](#table-of-contents)*
 

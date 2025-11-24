@@ -22,7 +22,9 @@ The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria,
     - [Security](#security)
   - [The-Surface-Plane](#the-surface-plane)
     - [Design](#design)
-    - [Imagery](#imagery)
+      - [Color Palette](#color-palette)
+      - [Typography](#typography)
+      - [Imagery](#imagery)
   - [Technologies](#technologies)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -32,8 +34,6 @@ The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria,
     - [Run-Locally](#run-locally)
   - [Media](#media)
   - [Credits](#credits)
-
-
 
 
 # User Experience Design
@@ -340,7 +340,7 @@ Implementation:
 
 ![Delete-booking-wireframe](docs/readme_images/delete-booking-wf.png)
 
-### Database -Design
+### Database-Design
 
 The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application as it is connected the the main booking and menu tables, linked by primary/foreign key relationships.
 
@@ -359,6 +359,24 @@ Entity relationship diagram was created using [DBeaver](https://dbeaver.io/downl
 Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
+## The Surface Plane
+
+## Design
+
+### Color Palette
+
+I chose a green color palette with its lighter and darker shades for the headings, buttons and logo and to complement it used white background, black text and dark brown for the forms. These colors complement the name of the restaurant creating an earthy tone which I wanted to incorporate.
+
+![Color-Palette](docs/readme_images/Olive%20Green%20Color%20Palette.png)
+
+### Typography
+
+Google fonts were used for typography.
+
+* <strong>'Noticia Text', serif</strong> was used for Headings, Page titles, Section Headings and Key Emphasis Text.
+* <strong>'Roboto', sans-serif</strong> was used for general text, Navigation Links and form labels.
+
 
 ### Imagery
 

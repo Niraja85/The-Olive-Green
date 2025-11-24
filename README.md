@@ -32,6 +32,8 @@ The Olive Green is a fictional Italian Restaurant located in Nuremberg, Bavaria,
     - [Version-Control](#version-control)
     - [Heroku-Deployment](#heroku-deployment)
     - [Run-Locally](#run-locally)
+      - [Prerequisites](#prerequisites)
+      - [Installation](#installation)
   - [Media](#media)
   - [Credits](#credits)
 
@@ -51,43 +53,22 @@ The Kanban board was created using github projects and can be located [here](htt
 
 ![Kanban image](docs/readme_images/Kanban.png)
 
+### User Stories
+
 #### Epics
 
-The project had 7 main Epics (milestones):
+The project had 4 main Epics:
 
-* EPIC 1 - Base Setup:
+* Home page
+* Menu
+* Admin Menu
+* Bookings
 
-    * The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
+The Epics were further divided into 7 Milestones:
 
-* EPIC 2 - Stand alone pages:
+* MILESTONE 1 - Base Setup:
 
-    * The stand alone pages epic is for small pages that did not have enough stories to warrant their own full epics. Instead of creating epics for tiny features, these small deliverables were all added under this epic.
-
-* EPIC 3 - Authentication Epic:
-
-    * The authentication epic is for all stories related to the registration, login and authorization of views. This epic provides critical functionality and value as without it the staff would not be able to manage the bookings securely without regular site visitors also being able to see and perform actions.
-
-* EPIC 4 - Menu:
-
-    * The menu epic is for all stories that relate to the creating, deleting, editing and viewing of menus. This allows for regular users to view menus and for staff to manage them with a simple UI interface.
-
-* EPIC 5 - Booking:
-
-    * The booking epic is for all stories that relate to creating, viewing, updating and deleting bookings. This allows the staff to easily view upcoming bookings, manage the bookings and also for customers to book and manage their own reservations.
-
-* EPIC 6 - Deployment Epic:
-
-    * This epic is for all stories related to deploying the app to heroku so that the site is live for staff and customer use.
-
-* EPIC 7 - Documentation:
-
-    * This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
-
-#### User Stories
-
-The following user stories were completed (by epics):
-
-* Epic 1 - Base Setup:
+  * The base setup is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
 
     * As a developer, I need to create the base.html page and structure so that other pages can use that layout.
     * As a developer, I need to create static resources so that images, css and javascript work on the website.
@@ -95,44 +76,91 @@ The following user stories were completed (by epics):
     * As a developer, I need to create the footer with social media links and contact information.
     * As a developer, I need to create the navbar so that users can navigate the website from any device.
 
-* Epic 2 - Stand alone pages:
+* MILESTONE 2 - Stand alone pages:
+
+  * The stand alone pages is for small pages that did not have enough stories to warrant their own full epics. Instead of creating epics for tiny features, these small deliverables were all added under this epic.
 
     * As a developer, I need to implement a 404 error page to alert users when they have accessed a page that doesn't exist.
     * As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.
     * As a developer, I need to implement a 403 error page to redirect unauthorised users to so that I can secure my views.
     * As a restaurant owner, I would like a home page so that customers can view information on my restaurant.
 
-* Epic 3 - Authentication Epic:
 
-    * As a developer, I need to implement allauth so that users can sign up and have access to the websites features.
-    * As a Site Owner, I want users to verify their email when registering an account so that I can ensure that a valid email address is being used.
-    * As a site owner, I would like the allauth pages customized to that they fit in with the sites styling.
+* MILESTONE 3 - Authentication:
 
-* Epic 4 - Menu:
+    * The authentication is for all stories related to the registration, login and authorization of views. This epic provides critical functionality and value as without it the staff would not be able to manage the bookings securely without regular site visitors also being able to see and perform actions.
 
-    * As a staff user, I want to be able to create a new menu when we have new dishes to offer.
-    * As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant.
-    * As a staff user, I want to be able to edit a menu when updates are needed.
-    * As a staff user, I want to be able to delete a menu when it is no longer used.
+      * As a developer, I need to implement allauth so that users can sign up and have access to the websites features.
+      * As a Site Owner, I want users to verify their email when registering an account so that I can ensure that a valid email address is being used.
+      * As a site owner, I would like the allauth pages customized to that they fit in with the sites styling.
 
-* Epic 5 - Booking:
+* MILESTONE 4 - Menu:
 
-    * As a user, I would like to be able to create a new booking when I want to visit the restaurant.
-    * As a user, I would like to view my bookings when I need to check the information.
-    * As a user, I would like to be able to edit a booking so that I can make changes when needed.
-    * As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully.
-    * As a user I would like to delete a booking when I no longer require it.
+    * The menu is for all stories that relate to the creating, deleting, editing and viewing of menus. This allows for regular users to view menus and for staff to manage them with a simple UI interface.
 
-* Epic 6 - Deployment:
+      * As a staff user, I want to be able to create a new menu when we have new dishes to offer.
+      * As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant.
+      * As a staff user, I want to be able to edit a menu when updates are needed.
+      * As a staff user, I want to be able to delete a menu when it is no longer used.
 
-    * As a developer, I need to set up whitenoise so that my static files are served in deployment.
-    * As a developer, I need to deploy the project to heroku so that it is live for customers.
 
-* Epic 7 - Documentation:
+* MILESTONE 5 - Booking:
+
+    * The booking  is for all stories that relate to creating, viewing, updating and deleting bookings. This allows the staff to easily view upcoming bookings, manage the bookings and also for customers to book and manage their own reservations.
+
+      * As a user, I would like to be able to create a new booking when I want to visit the restaurant.
+      * As a user, I would like to view my bookings when I need to check the information.
+      * As a user, I would like to be able to edit a booking so that I can make changes when needed.
+      * As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully.
+      * As a user I would like to delete a booking when I no longer require it.
+
+
+* MILESTONE 6 - Deployment:
+
+    * This epic is for all stories related to deploying the app to heroku so that the site is live for staff and customer use.
+
+      * As a developer, I need to set up whitenoise so that my static files are served in deployment.
+      * As a developer, I need to deploy the project to heroku so that it is live for customers.
+
+
+* MILESTONE 7 - Documentation:
+
+    * This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
 
     * Tasks:
         * Complete readme documentation.
         * Complete testing documentation writeup.
+
+The user stories were completed by dividing the milestones into 3 sprints:
+
+* SPRINT 1:
+
+  * Initial Setup:
+  - As a developer I need to setup the project so that it is ready to implement the core features.
+
+    * Acceptance criteria:
+
+      - Setting up the Github repo and virtual env on VS code.
+      - Creating the project.
+      - Installing Django
+      - Environment variables set up.
+      - Modifying the settings.py to hide sensitive information.
+
+  * Create HomePage:
+
+    * As a restaurant owner I would like to have a home page for my restaurant so that customers can view information about my restaurant.
+
+    * Acceptance criteria:
+
+      - Creating a home page with site logo and navbar.
+      - Navbar displaying home, menu, bookings.
+      - Footer created to add social media icon links of the restaurant.
+      - Hero image to be added.
+      - Conatct Details.
+
+
+
+*Go back to the [top](#table-of-contents)*
 
 ## The Scope Plane
 
@@ -141,6 +169,8 @@ The following user stories were completed (by epics):
 * Ability to perform CRUD functionality on Menus and Bookings.
 * Restricted role based features.
 * Home page with restaurant information.
+
+*Go back to the [top](#table-of-contents)*
 
 ## The Structure Plane
 
@@ -284,6 +314,8 @@ Implementation:
 - I would also like to add multi menu page with images.
 - I would also like to add a feedback section, where customers can rate their dining experience.
 
+*Go back to the [top](#table-of-contents)*
+
 ## The Skeleton Plane
 
 ### Wireframes
@@ -360,6 +392,8 @@ Views were secured by using the django class based view mixin, UserPassesTextMix
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
 
+*Go back to the [top](#table-of-contents)*
+
 ## The Surface Plane
 
 ## Design
@@ -383,6 +417,8 @@ Google fonts were used for typography.
 The Website logo was downloaded from google free source and Header/Footer colour was choosen to match website logo.
 
 The hero image was taken from Pexels which is a royalty free image site.
+
+*Go back to the [top](#table-of-contents)*
 
 ## Technologies
 
@@ -455,6 +491,8 @@ The hero image was taken from Pexels which is a royalty free image site.
 * webencodings==0.5.1 - Required by bleach to handle web-safe text encoding formats
 * whitenoise==5.3.0 - Used to serve static files directly without use of static resource provider like cloundinary
 
+*Go back to the [top](#table-of-contents)*
+
 ## Testing
 
 Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
@@ -514,13 +552,41 @@ The live link can be found here: [Live Site](https://the-olive-green-c9c6086e4cc
 
 ### Run Locally
 
-Navigate to the GitHub Repository you want to clone to use locally:
+#### Prerequisites
+- Python 3.12.8
 
-- Click on the code drop down button
-- Click on HTTPS
-- Copy the repository link to the clipboard
-- Open your IDE of choice (git must be installed for the next steps)
-- Type git clone copied-git-url into the IDE terminal
+#### Installation
+
+1. Clone the Github repo to the desired location on your computer.
+   ```sh
+   git clone git@github.com:niraja85/the-olive-green.git
+   cd the-olive-green
+   ```
+2. Create and run a Python virtual environment in terminal.
+   ```sh
+   python3 -m venv env
+   . env/bin/activate
+   ```
+3. Install the Python dependencies from `requirements.txt`.
+   ```sh
+   pip3 install -r requirements.txt
+   ```
+4. Create an `env.py` based on the `sample-env.py` file.
+    Create and add a [Django secret key](https://django-secret-key-generator.netlify.app/).
+
+5. Make migrations to prepare the database. This will create a `db.sqlite3` in the root. Remove the flags when happy to proceed.
+   ```sh
+   python3 manage.py makemigrations --dry-run
+   python3 manage.py migrate --plan
+   ```
+6. Create a new superuser.
+   ```sh
+   python3 manage.py createsuperuser
+   ```
+7. Run the site locally.
+   ```sh
+   python3 manage.py runserver
+   ```
 
 The project will now have been cloned on your local machine for use.
 
@@ -533,6 +599,7 @@ The project will now have been cloned on your local machine for use.
 
 * You Tube channel for Initial set up and way to navigate the apps [https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2]
 
+*Go back to the [top](#table-of-contents)*
 
 
 

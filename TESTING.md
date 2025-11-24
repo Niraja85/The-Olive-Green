@@ -287,9 +287,7 @@ Due to the django templating language code used in the HTML files, these could n
 
 ![HTML-Validator-Booking](docs/readme_images/HTML-Booking-form.png)
 
-All pages were run through the official [Pep8ci](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. In booking's forms.py length of line was too long, but changing it was causing syntax error, so I let it be.
-
-In settings.py file - The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
+All pages were run through the official [Pep8ci](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. There are no errors found. All the line too long problems were fixed.
 ![PEP8ci](docs/readme_images/PEP-8-validator.png)
 
 JavaScript code was run through [JSHINT](https://jshint.com) javascript validator.
@@ -330,6 +328,25 @@ Website is responsive on all screen sizes and no images are pixelated or stretch
 Actual:
 
 Website behaved as expected.
+
+## Bugs
+
+* Anonymous users were able to view others bookings.
+    - Fixed:
+        - LoginRequiredMixins was added in the wrong order in Bookings views.py, So the correct order for all Booking views are to add LoginRequiredMixin first, then ListView, CreateView, UpdateView, and DeleteView as required.
+
+* Password Reset form threw 500 error:
+    - Fixed:
+        - In settings.py in Account setup, Account Email Verification was set to mandatory. And Email_Host User and Email_Host_password was created using Gmail smtp account setup.
+
+* Booking Form was taking past dates and invalid inputs:
+    - Fixed:
+        -  In Booking form widget had been added but it had an s missing. Added that. Also Validation error set for min.number of guests to be 1, if not an error will be raised.
+        - Also def _init_ was wrongly indented which led to date time errors. Corrected indentation.
+
+* Menu prices were showing negative values:
+    - Fixed:
+        - Widgets was added in MenuItemForm in forms.py to keep price min. value to 0 and increase in step of 0.01. Also if price goes < 0 then a validation error will be raised to reject negative values.
 
 
 

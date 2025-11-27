@@ -1,8 +1,9 @@
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import redirect
 from datetime import date, timedelta
 from django.contrib import messages
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .forms import BookingForm
 from .models import Booking
 
@@ -69,6 +70,12 @@ class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         else:
             return self.request.user == self.get_object().user
 
+    def dispatch(self, *args, **kwargs):
+        if self.get_object().user != self.request.user:
+            return redirect(reverse('booking'))
+        if self.get_object().user == self.request.user:
+            return super().dispatch(*args, **kwargs)
+
 
 class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """View to delete the booking"""
@@ -86,3 +93,9 @@ class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         else:
             return self.request.user == self.get_object().user
+
+    def dispatch(self, *args, **kwargs):
+        if self.get_object().user != self.request.user:
+            return redirect(reverse('home'))
+        if self.get_object().user == self.request.user:
+            return super().dispatch(*args, **kwargs)

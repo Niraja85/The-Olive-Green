@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from datetime import date, timedelta
 from django.contrib import messages
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from .forms import BookingForm
 from .models import Booking
 
@@ -70,11 +70,25 @@ class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         else:
             return self.request.user == self.get_object().user
 
-    def dispatch(self, *args, **kwargs):
-        if self.get_object().user != self.request.user:
-            return redirect(reverse('booking'))
-        if self.get_object().user == self.request.user:
-            return super().dispatch(*args, **kwargs)
+    def dispatch(self, request, *args, **kwargs):
+
+        # Send anonymous users to login page
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+
+        obj = self.get_object()
+
+        # Allow staff
+        if request.user.is_staff:
+            return super().dispatch(request, *args, **kwargs)
+
+        # Allow owner
+        if obj.user == request.user:
+            return super().dispatch(request, *args, **kwargs)
+
+        # Block everyone else (logged-in but not allowed)
+        messages.error(request, "You are not authorized to edit this booking.")
+        return redirect('booking')
 
 
 class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -94,8 +108,24 @@ class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         else:
             return self.request.user == self.get_object().user
 
-    def dispatch(self, *args, **kwargs):
-        if self.get_object().user != self.request.user:
-            return redirect(reverse('home'))
-        if self.get_object().user == self.request.user:
-            return super().dispatch(*args, **kwargs)
+    def dispatch(self, request, *args, **kwargs):
+        # Send anonymous users to login page
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+
+        obj = self.get_object()
+
+        # Allow staff
+        if request.user.is_staff:
+            return super().dispatch(request, *args, **kwargs)
+
+        # Allow owner
+        if obj.user == request.user:
+            return super().dispatch(request, *args, **kwargs)
+
+        # Block everyone else (logged-in but not allowed)
+        messages.error(
+            request,
+            "You are not authorized to delete this booking."
+            )
+        return redirect('home')

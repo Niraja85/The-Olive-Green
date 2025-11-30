@@ -335,6 +335,12 @@ Website behaved as expected.
     - Fixed:
         - LoginRequiredMixins was added in the wrong order in Bookings views.py, So the correct order for all Booking views are to add LoginRequiredMixin first, then ListView, CreateView, UpdateView, and DeleteView as required.
 
+        - To further strengthen the security, added dispatch function in Bookings update and delete views which works as follows:
+            - Admin can view, edit and delete all bookings.
+            - Non-logged in users cannot view or manage bookings and will be directed to login page.
+            - Logged in users can view, and manage their own bookings only.
+            - Logged in users cannot view or manage others bookings.
+
 * Password Reset form threw 500 error:
     - Fixed:
         - In settings.py in Account setup, Account Email Verification was set to mandatory. And Email_Host User and Email_Host_password was created using Gmail smtp account setup.
